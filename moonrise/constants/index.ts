@@ -9,19 +9,16 @@ export const NAV_LINKS = [
 // FOOTER SECTION
 export const FOOTER_LINKS = [
   {
-    title: 'Learn More',
+    title: 'About Us',
     links: [
-      'About Hilink',
-      'Press Releases',
-      'Environment',
-      'Jobs',
-      'Privacy Policy',
-      'Contact Us',
+      'Our Story',
+      'Our Brands',
+      'Diversity Statement',
     ],
   },
   {
-    title: 'Our Community',
-    links: ['Climbing xixixi', 'Hiking hilink', 'Hilink kinthill'],
+    title: 'Careers',
+    links: ['Join Us', 'Job Search',],
   },
 ];
 
