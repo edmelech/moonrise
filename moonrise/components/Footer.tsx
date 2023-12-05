@@ -24,6 +24,14 @@ const Footer = () => {
                    </ul> 
                 </FooterColumn>
               ))}
+          
+          </div>
+          <div className="flex flex-col gap-5">
+            <FooterColumn title={SOCIALS.title}
+              <ul className='regular-14 flex gap-4 text-gray-30'>
+              
+              </ul>
+            </FooterColumn>
           </div>
         </div>
       </div>
@@ -38,8 +46,8 @@ type FooterColumnProps = {
 
 const FooterColumn = ({ title, children }: FooterColumnProps) => {
   return (
-    <div>
-      <h4>{title}</h4>
+    <div className='flex flex-col gap-5'>
+      <h4 className='Bold-18 whitespace-nowrap'>{title}</h4>
       {children}
     </div>
   )
