@@ -20,23 +20,18 @@ export const FOOTER_LINKS = [
     title: 'Careers',
     links: ['Join Us', 'Job Search',],
   },
+
+
 ];
 
-export const FOOTER_CONTACT_INFO = {
-  title: 'Contact Us',
-  links: [
-    { label: 'Admin Officer', value: '123-456-7890' },
-    { label: 'Email Officer', value: 'hilink@akinthil.com' },
-  ],
-};
 
 export const SOCIALS = {
-  title: 'Social',
+  title: 'Follow Us',
   links: [
-    '/facebook.svg',
-    '/instagram.svg',
-    '/twitter.svg',
-    '/youtube.svg',
-    '/wordpress.svg',
+    { name: 'Facebook', icon: '/facebook.svg' },
+    { name: 'Instagram', icon: '/instagram.svg' },
+    { name: 'Youtube', icon: '/youtube.svg' },
+    { name: 'LinkedIn', icon: '/linkedin.svg' },
+    { name: 'Twitter', icon: '/x.svg' },
   ],
 };
