@@ -37,8 +37,8 @@ const Footer = () => {
                    </ul> 
                 </FooterColumn>
               ))}
-          
           </div>
+
           <div className="flex flex-col gap-5 text-lime-950">
             <FooterColumn title={SOCIALS.title}>
               <ul className='regular-14 flex flex-col gap-4 text-lime-950'>
@@ -56,6 +56,18 @@ const Footer = () => {
         </div>
         <div className="flex flex-col w-full">
           <div className="border-t-2 border-lime-950 border-opacity-50"></div> 
+        </div>
+        <div className='flex justify-between mt-[-20px]'>
+          <div>
+            <p className='text-lime-950  text-xs'>© 2024 Moonrise. All rights reserved.</p>
+          </div>
+          <div>
+              <div className='flex'>
+                <p className='text-lime-950  text-xs px-2 underline'>Privacy Policy</p>
+                <p className='text-lime-950  text-xs px-2 underline'>Terms of Service</p>
+                <p className='text-lime-950  text-xs pl-2 underline'>Cookie Settings</p>
+              </div>
+          </div>
         </div>
       </div>
    
