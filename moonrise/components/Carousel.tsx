@@ -1,21 +1,23 @@
+'use client'
 import React from 'react'
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 const images = [
-  '/images/Candidates.jpg',
-  '/images/public/water-treatment-plant.jpg',
-  '/images/public/Water-Engineer-Clipboard.jpg',
+  '/Resize-Location.webp',
+  '/Water-Engineer-Clipboard.jpg',
 ]
 
 const Carousel = () => {
   const settings = {
     dots: true,
-    infinite: true,
+    infinite: false,
     speed: 500,
     slidesToShow: 1,
-    slidesToScroll: 1
+    slidesToScroll: 1,
+    autoplay: true,
+    autuplaySpeed: 2000,
   };
 
   return (
