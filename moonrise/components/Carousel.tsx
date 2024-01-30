@@ -3,10 +3,11 @@ import React from 'react'
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import './CarouselStyles.css'
 
 const images = [
   '/Resize-Location.webp',
-  // '/Water-Engineer-Clipboard.jpg',
+  '/Water-Engineer-Clipboard.jpg',
 ]
 
 const Carousel = () => {
@@ -23,7 +24,7 @@ const Carousel = () => {
   return (
     <Slider {...settings}>
       {images.map((image, index) => (
-        <div key={index}>
+        <div key={index} className="carousel-item">
           <img src={image} alt={`Carousel Image ${index + 1}`} />
         </div>
       ))}
