@@ -6,7 +6,7 @@ import 'slick-carousel/slick/slick-theme.css';
 
 const images = [
   '/Resize-Location.webp',
-  '/Water-Engineer-Clipboard.jpg',
+  // '/Water-Engineer-Clipboard.jpg',
 ]
 
 const Carousel = () => {
