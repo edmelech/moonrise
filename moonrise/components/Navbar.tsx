@@ -14,7 +14,7 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="bg-white flex justify-between padding-container relative z-30 p-5">
+    <nav className="bg-white flex justify-between py-5 px-10 relative z-30 ">
       <Link href="/">
         <Image src="/moonrise-logo.svg" alt="logo" width={200} height={100} />
       </Link>
