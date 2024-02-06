@@ -4,7 +4,7 @@ import MoonriseLogo from './MoonriseLogo';
 
 const Hero = () => {
   return (
-    <section className='flex flex-col xl:flex-row'>
+    <section className='flex'>
 
     {/* LEFT */}
 
@@ -19,6 +19,14 @@ const Hero = () => {
       </div>
     </div>
     
+    <div className="h-full w-2/5 border overflow-hidden">
+      <img 
+        src="resize-location-mid.webp" 
+        alt="Hero Image" 
+        className="w-full h-full object-cover object-center" 
+        style={{ objectFit: 'cover' }}
+      />
+     </div>
 
     {/* <div className="bg-green-800 text-white p-4 h-screen mx-auto border-2 border-red-500">
       <Carousel />
