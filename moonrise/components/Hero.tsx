@@ -19,7 +19,7 @@ const Hero = () => {
       </div>
     </div>
     
-    <div className="h-full w-2/5 border overflow-hidden">
+    <div className="h-screen w-2/5 overflow-hidden">
       <img 
         src="resize-location-mid.webp" 
         alt="Hero Image" 
