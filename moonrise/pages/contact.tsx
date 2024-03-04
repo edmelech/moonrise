@@ -5,8 +5,7 @@ import ContactForm from '@/components/ContactForm'
 const contact: React.FC = () => {
   return (
     <RootLayout>
-      <div>
-        <h1>Contact Pageeeee</h1>
+      <div className='border-t border-gray-500'>
         <ContactForm />
       </div>
     </RootLayout>
