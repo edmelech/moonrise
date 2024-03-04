@@ -6,7 +6,7 @@ const contact: React.FC = () => {
   return (
     <RootLayout>
       <div>
-        <h1>Contact Page</h1>
+        <h1>Contact Pageeeee</h1>
         <ContactForm />
       </div>
     </RootLayout>
