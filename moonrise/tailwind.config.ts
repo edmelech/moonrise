@@ -19,6 +19,8 @@ module.exports = {
           30: '#7B7B7B',
           50: '#585858',
           90: '#141414',
+          300: "#f8f9fa",
+          400: "#adb5bd",
         },
         orange: {
           50: '#FF814C',
@@ -28,6 +30,18 @@ module.exports = {
         },
         yellow: {
           50: '#FEC601',
+        },
+        primary: {
+          500: "#f6c160",
+          600: "#e0b058",
+        },
+        secondary: {
+          500: "#f6b060",
+          600: "#db9c53",
+        },
+        background: {
+          700: "#292929",
+          800: "#1a1a1a",
         },
       },
       backgroundImage: {
