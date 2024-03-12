@@ -14,7 +14,11 @@ type FormFields = {
 };
 
 const ReactHookForm = () => {
-  const { register, handleSubmit } = useForm<FormFields>();
+  const { 
+    register, 
+    handleSubmit,
+    formState: { errors },
+   } = useForm<FormFields>();
 
   const onSubmit: SubmitHandler<FormFields> = (data) => {
     console.log(data);
@@ -22,9 +26,42 @@ const ReactHookForm = () => {
 
   return (
     <form className='tutorial gap-2' onSubmit={handleSubmit(onSubmit)}>
-      <input {...register("email")} type="text" placeholder="Email" />
-      <input {...register("firstName")} type="text" placeholder="First Name" />
-      <input {...register("lastName")} type="text" placeholder="Last Name" />
+      <input {...register("email", {
+        required: "email is required",
+        pattern: {
+          value: /\S+@\S+\.\S+/,
+          message: "Entered value does not match email format"
+        }
+      })} 
+        type="text" 
+        placeholder="Email" 
+      />
+      {errors.email && <div className='text-red-500'>{errors.email.message}</div>}
+      <input {...register("firstName", {
+        required: "First name is required",
+        maxLength: {
+          value: 20,
+          message: "First name should be less than 20 characters"
+        }
+      
+      })} 
+        type="text" 
+        placeholder="First Name" 
+      />
+      {errors.firstName && <div className='text-red-500'>{errors.firstName.message}</div>}
+
+      <input {...register("lastName", {
+        required: "Last name is required",
+        maxLength: {
+          value: 20,
+          message: "Last name should be less than 20 characters"
+        }
+      
+      })} 
+        type="text" 
+        placeholder="Last Name"
+      />
+      {errors.lastName && <div className='text-red-500'>{errors.lastName.message}</div>}
       <input {...register("company")} type="text" placeholder="Company" />
       <input {...register("jobTitle")} type="text" placeholder="Job Title" />
       <input {...register("phoneNumber")} type="text" placeholder="Phone Number" />
