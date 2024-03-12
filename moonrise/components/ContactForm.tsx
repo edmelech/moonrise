@@ -17,10 +17,11 @@ const ReactHookForm = () => {
   const { 
     register, 
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitting },
    } = useForm<FormFields>();
 
-  const onSubmit: SubmitHandler<FormFields> = (data) => {
+  const onSubmit: SubmitHandler<FormFields> = async (data) => {
+    await new Promise(resolve => setTimeout(resolve, 1000));
     console.log(data);
   }
 
@@ -28,9 +29,11 @@ const ReactHookForm = () => {
     <form className='tutorial gap-2' onSubmit={handleSubmit(onSubmit)}>
       <input {...register("email", {
         required: "email is required",
-        pattern: {
-          value: /\S+@\S+\.\S+/,
-          message: "Entered value does not match email format"
+        validate: (value) => {
+          if (!value.includes("@")) {
+            return "Email must include @";
+          }
+          return true
         }
       })} 
         type="text" 
@@ -66,7 +69,9 @@ const ReactHookForm = () => {
       <input {...register("jobTitle")} type="text" placeholder="Job Title" />
       <input {...register("phoneNumber")} type="text" placeholder="Phone Number" />
       
-      <button type = "submit">Submit</button>
+      <button disabled={isSubmitting} type = "submit">
+        {isSubmitting ? "Submitting..." : "Submit"}
+      </button>
     </form>
   );
 }
