@@ -1,24 +1,30 @@
 import React from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
-
+import z from 'zod';
+import { zodResolver } from '@hookform/resolvers/zod';
 import MoonriseLogo from './MoonriseLogo'
 import CountryList from './CountryList'
 
-type FormFields = {
-  firstName: string;
-  lastName: string;
-  company: string;
-  jobTitle: string;
-  email: string;
-  phoneNumber: string;
-};
+const schema = z.object({
+  email: z.string().email(),
+  firstName: z.string().nonempty(),
+  lastName: z.string().nonempty(),
+  company: z.string(),
+  jobTitle: z.string(),
+  phoneNumber: z.string().min(7),
+});
+
+type FormFields = z.infer<typeof schema>;
 
 const ReactHookForm = () => {
   const { 
     register, 
     handleSubmit,
     formState: { errors, isSubmitting },
-   } = useForm<FormFields>();
+   } = useForm<FormFields>({
+    resolver: zodResolver(schema),
+   });
+   
 
   const onSubmit: SubmitHandler<FormFields> = async (data) => {
     await new Promise(resolve => setTimeout(resolve, 1000));
@@ -26,53 +32,58 @@ const ReactHookForm = () => {
   }
 
   return (
-    <form className='tutorial gap-2' onSubmit={handleSubmit(onSubmit)}>
-      <input {...register("email", {
-        required: "email is required",
-        validate: (value) => {
-          if (!value.includes("@")) {
-            return "Email must include @";
-          }
-          return true
-        }
-      })} 
-        type="text" 
-        placeholder="Email" 
-      />
-      {errors.email && <div className='text-red-500'>{errors.email.message}</div>}
-      <input {...register("firstName", {
-        required: "First name is required",
-        maxLength: {
-          value: 20,
-          message: "First name should be less than 20 characters"
-        }
-      
-      })} 
-        type="text" 
-        placeholder="First Name" 
-      />
-      {errors.firstName && <div className='text-red-500'>{errors.firstName.message}</div>}
+    <div className='flex justify-center items-center h-screen'>
+      <form className='tutorial gap-2' onSubmit={handleSubmit(onSubmit)}>
+        <div className='flex gap-2'>  
+          <input {...register("firstName")} 
+            type="text" 
+            placeholder="First Name" 
+            className='p-3 rounded-md'
+          />
+          <input {...register("lastName")} 
+            type="text" 
+            placeholder="Last Name" 
+            className='p-3 rounded-md'
+          />
+        </div>
 
-      <input {...register("lastName", {
-        required: "Last name is required",
-        maxLength: {
-          value: 20,
-          message: "Last name should be less than 20 characters"
-        }
-      
-      })} 
-        type="text" 
-        placeholder="Last Name"
-      />
-      {errors.lastName && <div className='text-red-500'>{errors.lastName.message}</div>}
-      <input {...register("company")} type="text" placeholder="Company" />
-      <input {...register("jobTitle")} type="text" placeholder="Job Title" />
-      <input {...register("phoneNumber")} type="text" placeholder="Phone Number" />
-      
-      <button disabled={isSubmitting} type = "submit">
-        {isSubmitting ? "Submitting..." : "Submit"}
-      </button>
-    </form>
+        <div className='flex gap-2'>
+          <input {...register("company")} 
+            type="text" 
+            placeholder="Company" 
+            className='p-3 rounded-md'
+          />
+          <input {...register("jobTitle")} 
+            type="text" 
+            placeholder="Job Title" 
+            className='p-3 rounded-md'
+          />
+        </div>
+        
+        <div className='flex gap-2'>
+          <input {...register("email")} 
+            type="text" 
+            placeholder="Email" 
+            className='p-3 rounded-md'
+          />
+          <input {...register("phoneNumber")} 
+            type="text" 
+            placeholder="Phone Number" 
+            className='p-3 rounded-md'
+          />
+        </div>
+    
+        {errors.lastName && <div className='text-red-500'>{errors.lastName.message}</div>}
+        {errors.email && <div className='text-red-500'>{errors.email.message}</div>}
+        {errors.firstName && <div className='text-red-500'>{errors.firstName.message}</div>}
+        
+
+        <button disabled={isSubmitting} type = "submit">
+          {isSubmitting ? "Submitting..." : "Submit"}
+        </button>
+      </form>
+    </div>
+    
   );
 }
 
