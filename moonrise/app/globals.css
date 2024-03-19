@@ -29,6 +29,10 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+.custom-button {
+  background-color: #0BA6A2;
+}
+
 /* below is from JS Mastery */
 
 * {

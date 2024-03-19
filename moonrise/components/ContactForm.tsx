@@ -33,10 +33,10 @@ const ReactHookForm = () => {
 
   return (
     <div className='flex flex-col justify-center items-center h-screen bg-white'>
-      <div className='flex justify-center'>
+      <div className='flex justify-center w-1/2 p-3'>
         <p className='text-black text-center'>Thank you for your interest in moonrise. To speak with a representative, please complete the form below. One of our experts will follow up with you shortly.</p>
       </div>
-      <form className='tutorial gap-2 w-3/4' onSubmit={handleSubmit(onSubmit)}>
+      <form className='tutorial gap-2 w-3/5' onSubmit={handleSubmit(onSubmit)}>
         <div className='flex gap-2'>  
           <input {...register("firstName")} 
             type="text" 
@@ -81,7 +81,7 @@ const ReactHookForm = () => {
         {errors.firstName && <div className='text-red-500'>{errors.firstName.message}</div>}
         
         <div className='flex justify-center'>
-          <button disabled={isSubmitting} type = "submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-4 px-4 rounded w-40">
+          <button disabled={isSubmitting} type = "submit" className="font-light custom-button hover:bg-blue-700 text-white font-bold m-4 py-4 px-4 rounded w-40">
             {isSubmitting ? "Submitting..." : "Submit"}
           </button>
         </div>
