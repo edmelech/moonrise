@@ -33,6 +33,10 @@ body {
   background-color: #0BA6A2;
 }
 
+.custom-text {
+  color: #003030;
+}
+
 /* below is from JS Mastery */
 
 * {
