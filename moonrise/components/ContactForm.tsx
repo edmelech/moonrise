@@ -42,16 +42,22 @@ const ReactHookForm = () => {
       </div>
       <form className='tutorial gap-2 w-3/5' onSubmit={handleSubmit(onSubmit)}>
         <div className='flex gap-2'>  
-          <input {...register("firstName")} 
-            type="text" 
-            placeholder="First Name" 
-            className='p-3 rounded-md w-full'
-          />
-          <input {...register("lastName")} 
-            type="text" 
-            placeholder="Last Name" 
-            className='p-3 rounded-md w-full'
-          />
+          <div className='flex flex-col flex-1'>
+            <label htmlFor='firstName' className='custom-text'>First Name</label>
+            <input {...register("firstName")} 
+              type="text" 
+              id="firstName"
+              className='p-3 rounded-md flex-1'
+            />
+          </div>
+          <div className='flex flex-col flex-1'>
+            <label htmlFor='lastName' className='custom-text'>Last Name</label>
+            <input {...register("lastName")} 
+              type="text" 
+              id='lastName'
+              className='p-3 rounded-md flex-1'
+            />
+          </div>
         </div>
 
         <div className='flex gap-2'>
