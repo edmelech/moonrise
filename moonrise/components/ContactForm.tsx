@@ -5,6 +5,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import MoonriseLogo from './MoonriseLogo'
 import CountryList from './CountryList'
 
+
 const schema = z.object({
   email: z.string().email(),
   firstName: z.string().nonempty(),
@@ -33,6 +34,9 @@ const ReactHookForm = () => {
 
   return (
     <div className='flex flex-col justify-center items-center h-screen bg-white'>
+      <div className='contact-container m-4'>
+        <img src="/contact.png" alt="contact"  />
+      </div>
       <div className='flex justify-center w-1/2 p-3'>
         <p className='text-center custom-text'>Thank you for your interest in moonrise. To speak with a representative, please complete the form below. One of our experts will follow up with you shortly.</p>
       </div>

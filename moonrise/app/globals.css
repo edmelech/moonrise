@@ -37,6 +37,12 @@ body {
   color: #003030;
 }
 
+.contact-container {
+  width: 15%;
+  height: auto;
+  filter: sepia(100%) hue-rotate(90deg) brightness(1.2);
+}
+
 /* below is from JS Mastery */
 
 * {

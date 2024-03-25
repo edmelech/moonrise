@@ -10,13 +10,15 @@ const Hero = () => {
 
     <div className="bg-custom-color text-white p-16 h-screen w-3/5 min-w-3/5 ">
       <h1 className="text-7xl font-bold pb-12 w-4/5">The high-water mark in civil engineering recruitment</h1>
-      <p className="text-lg font-weight: 100">moonrise. is a specialist talent partner in the US civil engineering industry. It is our sole mission to provide first class service to our clients, 
-      sourcing ideal candidates from niche markets, creating lasting business relationships. With a vast and expanding network of industry leaders and experts, we have the very best of US engineering talent right at our fingertips. With an emphasis on civil infrastructure, we are recruitment specialists in: Water/Wastewater, Water Treatment, Transportation, Water Resources, and Land Development engineering.</p> 
+      <p className="text-lg font-weight: 100">moonrise. is a specialist talent partner in the North American infrastructure industry. It is our sole mission to provide first class service to our clients, sourcing ideal candidates from niche markets and creating lasting business relationships. Boasting a deep and expanding network of industry leaders and experts across the US and Canada, we have the very best talent right at our fingertips. With an emphasis on civil infrastructure, we are recruitment specialists in: Engineering, Architecture, Real Estate, Construction, Automation & Controls, and Renewable Energy.</p> 
       <br />
-      <p className="text-lg font-weight: 100"> We understand how important our clients' work is in creating a sustainable and functioning environment that works for everybody. Our clients trust us because we believe in what they do, whilst we spend all of our time developing our knowledge of the market in real time with genuine passion, to ultimately deliver the very best engineering talent.</p>
-      <div className='hero-logo flex items-center justify-center w-1/4 mx-auto p-4 pt-16'>
+      <p className="text-lg font-weight: 100">We understand how important our clients' work is in creating a sustainable and functioning environment that works for everybody. Our clients trust us because we believe in what they do, whilst we spend all of our time developing our knowledge of the market in real time with genuine passion to ultimately deliver the very best talent solutions.</p>
+      <br />
+      <p className='text-lg font-weight: 100 text-center'>We are passionate. We are unique. We are experts. We are...</p>
+      <div className='hero-logo flex items-center justify-center w-1/4 mx-auto p-4 pt-2 '>
         <MoonriseLogo className="w-full h-auto"/>
       </div>
+      <div className='text-lg font-weight:100 text-center'>The high-water mark in recruitment.</div>
     </div>
     
     <div className="h-screen w-2/5 overflow-hidden">
