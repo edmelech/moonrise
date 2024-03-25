@@ -47,7 +47,7 @@ const ReactHookForm = () => {
             <input {...register("firstName")} 
               type="text" 
               id="firstName"
-              className='p-3 rounded-md flex-1'
+              className='p-3 rounded-md flex-1 bg-transparent border border-green-950'
             />
           </div>
           <div className='flex flex-col flex-1'>
@@ -55,35 +55,47 @@ const ReactHookForm = () => {
             <input {...register("lastName")} 
               type="text" 
               id='lastName'
-              className='p-3 rounded-md flex-1'
+              className='p-3 rounded-md flex-1 bg-transparent border border-green-950'
             />
           </div>
         </div>
 
         <div className='flex gap-2'>
-          <input {...register("company")} 
-            type="text" 
-            placeholder="Company" 
-            className='p-3 rounded-md w-full'
-          />
-          <input {...register("jobTitle")} 
-            type="text" 
-            placeholder="Job Title" 
-            className='p-3 rounded-md w-full'
-          />
+          <div className='flex flex-col flex-1'>
+            <label htmlFor='company' className='custom-text'>Company</label>
+            <input {...register("company")} 
+              type="text" 
+              id='company'
+              className='p-3 rounded-md flex-1 bg-transparent border border-green-950'
+            />
+          </div>
+          <div className='flex flex-col flex-1'>
+            <label htmlFor='jobTitle' className='custom-text'>Job Title</label>
+            <input {...register("jobTitle")} 
+              type="text" 
+              id='jobTitle'
+              className='p-3 rounded-md flex-1 bg-transparent border border-green-950'
+            />
+          </div>
         </div>
         
         <div className='flex gap-2'>
-          <input {...register("email")} 
-            type="text" 
-            placeholder="Email" 
-            className='p-3 rounded-md w-full'
-          />
-          <input {...register("phoneNumber")} 
-            type="text" 
-            placeholder="Phone Number" 
-            className='p-3 rounded-md w-full'
-          />
+          <div className='flex flex-col flex-1'>
+            <label htmlFor='email' className='custom-text'>Email</label>
+            <input {...register("email")} 
+              type="text" 
+              id='email'
+              className='p-3 rounded-md flex-1 bg-transparent border border-green-950'
+            />
+          </div>
+          <div className='flex flex-col flex-1 '>
+            <label htmlFor='phone' className='custom-text'>Phone number</label>
+            <input {...register("phoneNumber")} 
+              type="text" 
+              id='phone'
+              className='p-3 rounded-md flex-1 bg-transparent border border-green-950'
+            />
+          </div>
         </div>
     
         {errors.lastName && <div className='text-red-500'>{errors.lastName.message}</div>}
