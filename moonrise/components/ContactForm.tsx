@@ -63,7 +63,7 @@ const ReactHookForm = () => {
             <input {...register("firstName")} 
               type="text" 
               id="firstName"
-              className='p-3 rounded-md flex-1 bg-transparent border border-green-950'
+              className='p-3 rounded-md flex-1 bg-transparent border border-green-950 custom-text'
             />
           </div>
           <div className='flex flex-col flex-1'>
@@ -71,7 +71,7 @@ const ReactHookForm = () => {
             <input {...register("lastName")} 
               type="text" 
               id='lastName'
-              className='p-3 rounded-md flex-1 bg-transparent border border-green-950'
+              className='p-3 rounded-md flex-1 bg-transparent border border-green-950 custom-text'
             />
           </div>
         </div>
@@ -82,7 +82,7 @@ const ReactHookForm = () => {
             <input {...register("company")} 
               type="text" 
               id='company'
-              className='p-3 rounded-md flex-1 bg-transparent border border-green-950'
+              className='p-3 rounded-md flex-1 bg-transparent border border-green-950 custom-text'
             />
           </div>
           <div className='flex flex-col flex-1'>
@@ -90,7 +90,7 @@ const ReactHookForm = () => {
             <input {...register("jobTitle")} 
               type="text" 
               id='jobTitle'
-              className='p-3 rounded-md flex-1 bg-transparent border border-green-950'
+              className='p-3 rounded-md flex-1 bg-transparent border border-green-950 custom-text'
             />
           </div>
         </div>
@@ -101,7 +101,7 @@ const ReactHookForm = () => {
             <input {...register("email")} 
               type="text" 
               id='email'
-              className='p-3 rounded-md flex-1 bg-transparent border border-green-950'
+              className='p-3 rounded-md flex-1 bg-transparent border border-green-950 custom-text'
             />
           </div>
           <div className='flex flex-col flex-1 '>
@@ -109,7 +109,7 @@ const ReactHookForm = () => {
             <input {...register("phoneNumber")} 
               type="text" 
               id='phone'
-              className='p-3 rounded-md flex-1 bg-transparent border border-green-950'
+              className='p-3 rounded-md flex-1 bg-transparent border border-green-950 custom-text'
             />
           </div>
         </div>
