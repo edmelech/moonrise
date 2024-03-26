@@ -5,6 +5,13 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import MoonriseLogo from './MoonriseLogo'
 import CountryList from './CountryList'
 
+const enquieries = [
+  "We are looking for hiring assistance",
+  "I am looking for vacancies",
+  "I want to work at moonrise",
+  "I have a different enquiry"
+]
+
 const countries = [
   "Canada",
   "UK",
@@ -19,6 +26,7 @@ const schema = z.object({
   jobTitle: z.string(),
   phoneNumber: z.string().min(7),
   country: z.string().min(1, "Please select a country"),
+  enquieries: z.string().min(1, "Please select an enquiry"),
 });
 
 type FormFields = z.infer<typeof schema>;
@@ -118,6 +126,23 @@ const ReactHookForm = () => {
             {countries.map((country, index) => (
               <option key={index} value={country}>
                 {country}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className='flex flex-col flex-1'>
+          <label htmlFor='country' className='custom-text pb-2'>How Can We Help You</label>
+          <select {...register("country")}
+            id='country'
+            className='p-3 rounded-md flex-1 bg-transparent border border-green-950 text-slate-500'
+            defaultValue=""
+          >
+            <option value="" disabled>
+              Select one...
+            </option>
+            {enquieries.map((enquiery, index) => (
+              <option key={index} value={enquiery}>
+                {enquiery}
               </option>
             ))}
           </select>
