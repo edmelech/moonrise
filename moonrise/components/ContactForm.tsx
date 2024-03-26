@@ -5,6 +5,11 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import MoonriseLogo from './MoonriseLogo'
 import CountryList from './CountryList'
 
+const countries = [
+  "Canada",
+  "UK",
+  "USA",
+]
 
 const schema = z.object({
   email: z.string().email(),
@@ -13,6 +18,7 @@ const schema = z.object({
   company: z.string(),
   jobTitle: z.string(),
   phoneNumber: z.string().min(7),
+  country: z.string().min(1, "Please select a country"),
 });
 
 type FormFields = z.infer<typeof schema>;
@@ -32,6 +38,8 @@ const ReactHookForm = () => {
     console.log(data);
   }
 
+ 
+
   return (
     <div className='flex flex-col justify-center items-center h-screen bg-white'>
       <div className='contact-container m-4'>
@@ -43,7 +51,7 @@ const ReactHookForm = () => {
       <form className='tutorial gap-2 w-3/5' onSubmit={handleSubmit(onSubmit)}>
         <div className='flex gap-2'>  
           <div className='flex flex-col flex-1'>
-            <label htmlFor='firstName' className='custom-text'>First Name</label>
+            <label htmlFor='firstName' className='custom-text pb-2'>First Name</label>
             <input {...register("firstName")} 
               type="text" 
               id="firstName"
@@ -51,7 +59,7 @@ const ReactHookForm = () => {
             />
           </div>
           <div className='flex flex-col flex-1'>
-            <label htmlFor='lastName' className='custom-text'>Last Name</label>
+            <label htmlFor='lastName' className='custom-text pb-2'>Last Name</label>
             <input {...register("lastName")} 
               type="text" 
               id='lastName'
@@ -62,7 +70,7 @@ const ReactHookForm = () => {
 
         <div className='flex gap-2'>
           <div className='flex flex-col flex-1'>
-            <label htmlFor='company' className='custom-text'>Company</label>
+            <label htmlFor='company' className='custom-text pb-2'>Company</label>
             <input {...register("company")} 
               type="text" 
               id='company'
@@ -70,7 +78,7 @@ const ReactHookForm = () => {
             />
           </div>
           <div className='flex flex-col flex-1'>
-            <label htmlFor='jobTitle' className='custom-text'>Job Title</label>
+            <label htmlFor='jobTitle' className='custom-text pb-2'>Job Title</label>
             <input {...register("jobTitle")} 
               type="text" 
               id='jobTitle'
@@ -79,9 +87,9 @@ const ReactHookForm = () => {
           </div>
         </div>
         
-        <div className='flex gap-2'>
-          <div className='flex flex-col flex-1'>
-            <label htmlFor='email' className='custom-text'>Email</label>
+        <div className='flex gap-2 '>
+          <div className='flex flex-col flex-1 '>
+            <label htmlFor='email' className='custom-text pb-2'>Email</label>
             <input {...register("email")} 
               type="text" 
               id='email'
@@ -89,13 +97,30 @@ const ReactHookForm = () => {
             />
           </div>
           <div className='flex flex-col flex-1 '>
-            <label htmlFor='phone' className='custom-text'>Phone number</label>
+            <label htmlFor='phone' className='custom-text pb-2'>Phone number</label>
             <input {...register("phoneNumber")} 
               type="text" 
               id='phone'
               className='p-3 rounded-md flex-1 bg-transparent border border-green-950'
             />
           </div>
+        </div>
+        <div className='flex flex-col flex-1'>
+          <label htmlFor='country' className='custom-text pb-2'>Country</label>
+          <select {...register("country")}
+            id='country'
+            className='p-3 rounded-md flex-1 bg-transparent border border-green-950 text-slate-500'
+            defaultValue=""
+          >
+            <option value="" disabled>
+              Select a country
+            </option>
+            {countries.map((country, index) => (
+              <option key={index} value={country}>
+                {country}
+              </option>
+            ))}
+          </select>
         </div>
     
         {errors.lastName && <div className='text-red-500'>{errors.lastName.message}</div>}

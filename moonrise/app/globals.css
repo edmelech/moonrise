@@ -43,6 +43,18 @@ body {
   filter: sepia(100%) hue-rotate(90deg) brightness(1.2);
 }
 
+
+select {
+  -webkit-appearance: none; /* For webkit browsers */
+  -moz-appearance: none; /* For Firefox */
+  appearance: none;
+  padding-right: 30px; /* Increase the padding on the right side */
+  background-image: url('/down-arrow.svg'); /* Custom arrow icon */
+  background-repeat: no-repeat;
+  background-position: right 10px center; /* Adjust the position of the arrow */
+  background-size: 15px;
+}
+
 /* below is from JS Mastery */
 
 * {
