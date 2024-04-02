@@ -148,18 +148,27 @@ const ReactHookForm = () => {
           </select>
         </div>
     
-        {errors.lastName && <div className='text-red-500'>{errors.lastName.message}</div>}
+        {/* {errors.lastName && <div className='text-red-500'>{errors.lastName.message}</div>}
         {errors.email && <div className='text-red-500'>{errors.email.message}</div>}
         {errors.firstName && <div className='text-red-500'>{errors.firstName.message}</div>}
         {errors.phoneNumber && <div className='text-red-500'>{errors.phoneNumber.message}</div>}
-        
+         */}
         <div className='flex justify-center'>
-          <button disabled={isSubmitting} type = "submit" className="custom-button hover:bg-blue-700 text-white m-4 py-4 px-4 rounded w-40">
+          <button disabled={isSubmitting} type="submit" className="custom-button hover:bg-blue-700 text-white m-4 py-4 px-4 rounded w-40">
             {isSubmitting ? "Submitting..." : "Submit"}
           </button>
         </div>
        
       </form>
+        {errors && (
+          <div className="text-red-500">
+            {Object.values(errors).map((error, index) => (
+              <p key={index}>{error.message}</p>
+            ))}
+          </div>
+      )}
+
+
     </div>
     
   );
