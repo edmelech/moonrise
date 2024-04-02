@@ -20,11 +20,11 @@ const countries = [
 
 const schema = z.object({
   email: z.string().email(),
-  firstName: z.string().nonempty(),
-  lastName: z.string().nonempty(),
+  firstName: z.string().min(1, { message: "Please enter your first name" }),
+  lastName: z.string().min(1, { message: "Please enter your last name" }),
   company: z.string(),
   jobTitle: z.string(),
-  phoneNumber: z.string().min(7),
+  phoneNumber: z.string().regex(/^\d{7,}$/i, { message: "Phone number must contain at least 7 digits" }),
   country: z.string().min(1, "Please select a country"),
   enquieries: z.string().min(1, "Please select an enquiry"),
 });
@@ -151,6 +151,7 @@ const ReactHookForm = () => {
         {errors.lastName && <div className='text-red-500'>{errors.lastName.message}</div>}
         {errors.email && <div className='text-red-500'>{errors.email.message}</div>}
         {errors.firstName && <div className='text-red-500'>{errors.firstName.message}</div>}
+        {errors.phoneNumber && <div className='text-red-500'>{errors.phoneNumber.message}</div>}
         
         <div className='flex justify-center'>
           <button disabled={isSubmitting} type = "submit" className="custom-button hover:bg-blue-700 text-white m-4 py-4 px-4 rounded w-40">
