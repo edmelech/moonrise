@@ -65,6 +65,7 @@ const ReactHookForm = () => {
               id="firstName"
               className='p-3 rounded-md flex-1 bg-transparent border border-green-950 custom-text'
             />
+            {errors.firstName && <span className='text-red-500'>{errors.firstName.message}</span>}
           </div>
           <div className='flex flex-col flex-1'>
             <label htmlFor='lastName' className='custom-text pb-2'>Last Name</label>
@@ -73,6 +74,7 @@ const ReactHookForm = () => {
               id='lastName'
               className='p-3 rounded-md flex-1 bg-transparent border border-green-950 custom-text'
             />
+            {errors.lastName && <span className='text-red-500'>{errors.lastName.message}</span>}
           </div>
         </div>
 
@@ -103,6 +105,7 @@ const ReactHookForm = () => {
               id='email'
               className='p-3 rounded-md flex-1 bg-transparent border border-green-950 custom-text'
             />
+            {errors.email && <span className='text-red-500'>{errors.email.message}</span>}
           </div>
           <div className='flex flex-col flex-1 '>
             <label htmlFor='phone' className='custom-text pb-2'>Phone number</label>
@@ -111,6 +114,7 @@ const ReactHookForm = () => {
               id='phone'
               className='p-3 rounded-md flex-1 bg-transparent border border-green-950 custom-text'
             />
+            {errors.phoneNumber && <span className='text-red-500'>{errors.phoneNumber.message}</span>}
           </div>
         </div>
         <div className='flex flex-col flex-1'>
@@ -131,18 +135,18 @@ const ReactHookForm = () => {
           </select>
         </div>
         <div className='flex flex-col flex-1'>
-          <label htmlFor='country' className='custom-text pb-2'>How Can We Help You</label>
-          <select {...register("country")}
-            id='country'
+          <label htmlFor='enquiry' className='custom-text pb-2'>How Can We Help You</label>
+          <select {...register("enquieries")}
+            id='enquiry'
             className='p-3 rounded-md flex-1 bg-transparent border border-green-950 text-slate-500'
             defaultValue=""
           >
             <option value="" disabled>
               Select one...
             </option>
-            {enquieries.map((enquiery, index) => (
-              <option key={index} value={enquiery}>
-                {enquiery}
+            {enquieries.map((enquiry, index) => (
+              <option key={index} value={enquiry}>
+                {enquiry}
               </option>
             ))}
           </select>
@@ -160,14 +164,7 @@ const ReactHookForm = () => {
         </div>
        
       </form>
-        {errors && (
-          <div className="text-red-500">
-            {Object.values(errors).map((error, index) => (
-              <p key={index}>{error.message}</p>
-            ))}
-          </div>
-      )}
-
+      
 
     </div>
     
