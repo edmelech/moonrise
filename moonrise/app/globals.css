@@ -55,6 +55,14 @@ select {
   background-size: 15px;
 }
 
+.error-border {
+  border: 1px solid red;
+}
+
+.custom-button[disabled] {
+  cursor: not-allowed;
+}
+
 /* below is from JS Mastery */
 
 * {

@@ -63,7 +63,7 @@ const ReactHookForm = () => {
             <input {...register("firstName")} 
               type="text" 
               id="firstName"
-              className='p-3 rounded-md flex-1 bg-transparent border border-green-950 custom-text'
+              className={`p-3 rounded-md flex-1 bg-transparent border border-green-950 custom-text ${errors.firstName ? 'error-border' : ''}`}
             />
             {errors.firstName && <span className='text-red-500'>{errors.firstName.message}</span>}
           </div>
@@ -72,7 +72,7 @@ const ReactHookForm = () => {
             <input {...register("lastName")} 
               type="text" 
               id='lastName'
-              className='p-3 rounded-md flex-1 bg-transparent border border-green-950 custom-text'
+              className={`p-3 rounded-md flex-1 bg-transparent border border-green-950 custom-text ${errors.lastName ? 'error-border' : ''}`}
             />
             {errors.lastName && <span className='text-red-500'>{errors.lastName.message}</span>}
           </div>
@@ -103,7 +103,7 @@ const ReactHookForm = () => {
             <input {...register("email")} 
               type="text" 
               id='email'
-              className='p-3 rounded-md flex-1 bg-transparent border border-green-950 custom-text'
+              className={`p-3 rounded-md flex-1 bg-transparent border border-green-950 custom-text ${errors.firstName ? 'error-border' : ''}`}
             />
             {errors.email && <span className='text-red-500'>{errors.email.message}</span>}
           </div>
@@ -112,7 +112,7 @@ const ReactHookForm = () => {
             <input {...register("phoneNumber")} 
               type="text" 
               id='phone'
-              className='p-3 rounded-md flex-1 bg-transparent border border-green-950 custom-text'
+              className={`p-3 rounded-md flex-1 bg-transparent border border-green-950 custom-text ${errors.phoneNumber ? 'error-border' : ''}`}  
             />
             {errors.phoneNumber && <span className='text-red-500'>{errors.phoneNumber.message}</span>}
           </div>
@@ -158,10 +158,11 @@ const ReactHookForm = () => {
         {errors.phoneNumber && <div className='text-red-500'>{errors.phoneNumber.message}</div>}
          */}
         <div className='flex justify-center'>
-          <button disabled={isSubmitting} type="submit" className="custom-button hover:bg-blue-700 text-white m-4 py-4 px-4 rounded w-40">
+          <button disabled={Object.keys(errors).length > 0 || isSubmitting} type="submit" className="custom-button hover:bg-blue-700 text-white m-4 py-4 px-4 rounded w-40">
             {isSubmitting ? "Submitting..." : "Submit"}
           </button>
         </div>
+        
        
       </form>
       
