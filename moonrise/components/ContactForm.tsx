@@ -159,7 +159,14 @@ const ReactHookForm = () => {
          */}
         <div className='flex justify-center'>
           <button disabled={Object.keys(errors).length > 0 || isSubmitting} type="submit" className="custom-button hover:bg-blue-700 text-white m-4 py-4 px-4 rounded w-40">
-            {isSubmitting ? "Submitting..." : "Submit"}
+            {isSubmitting ? (
+            <div className="flex justify-center items-center">
+              <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-white"></div>
+              <span className="ml-2">Submitting...</span>
+            </div>
+          ) : (
+            "Submit"
+          )}
           </button>
         </div>
         
