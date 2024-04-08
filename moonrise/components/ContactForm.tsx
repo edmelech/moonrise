@@ -2,6 +2,7 @@ import React from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import z from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
+import sendContactForm from '../pages/api/contact.js'
 import MoonriseLogo from './MoonriseLogo'
 import CountryList from './CountryList'
 
@@ -43,7 +44,16 @@ const ReactHookForm = () => {
 
   const onSubmit: SubmitHandler<FormFields> = async (data) => {
     await new Promise(resolve => setTimeout(resolve, 1000));
+    try {
+      await sendContactForm(data); // Call the sendContactForm function with form data
+      console.log('Form submitted successfully');
+    } catch (error) {
+      console.error('Error submitting form:', error);
+    }
     console.log(data);
+
+  
+    
   }
 
  
