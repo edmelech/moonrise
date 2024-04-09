@@ -2,7 +2,7 @@ import React from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import z from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
-import sendContactForm from '../pages/api/contact.js'
+import { sendContactForm } from '../lib/api'
 import MoonriseLogo from './MoonriseLogo'
 import CountryList from './CountryList'
 
