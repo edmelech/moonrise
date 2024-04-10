@@ -22,10 +22,14 @@ const handler = async (req, res) => {
         text: "This is a test email",
         html: "<h1>Test title</h1><p>Test paragraph</p>"
       })
+      console.log('Email sent successfully')
+      return res.status(200).json({ message: 'Email sent successfully' })
     } catch (error) {
-      console.log(error);
+      console.log("error sending email:", error);
       return res.status(400).json({ message: error.message });
     }
   }
   return res.status(400).json({ message: 'Bad request' });
-}
+};
+
+export default handler;
