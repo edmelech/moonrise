@@ -3,6 +3,19 @@ import { SubmitHandler, useForm } from 'react-hook-form'
 import z from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { sendContactForm } from '../lib/api'
+import { useState } from 'react'
+import {
+  Button,
+  Container,
+  FormControl,
+  FormErrorMessage,
+  FormLabel,
+  Heading,
+  Input,
+  Text,
+  Textarea,
+  useToast,
+} from "@chakra-ui/react";
 import MoonriseLogo from './MoonriseLogo'
 import CountryList from './CountryList'
 
@@ -32,6 +45,10 @@ const schema = z.object({
 
 type FormFields = z.infer<typeof schema>;
 
+const initValues = { name: "", email: "", subject: "", message: "" };
+
+const initState = { isLoading: false, error: "", values: initValues };
+
 const ReactHookForm = () => {
   const { 
     register, 
@@ -41,14 +58,34 @@ const ReactHookForm = () => {
     resolver: zodResolver(schema),
    });
    
+  const [state, setState] = useState(initState);
+  const [touched, setTouched] = useState({});
+  const toast = useToast();
+
+  const { isLoading, error } = state;
 
   const onSubmit: SubmitHandler<FormFields> = async (data) => {
     await new Promise(resolve => setTimeout(resolve, 1000));
     try {
       await sendContactForm(data); // Call the sendContactForm function with form data
-      console.log('Form submitted successfully');
+      setTouched({})
+      setState(initState)
+      toast ({
+        title: "Message sent",
+        description: "Thank you for your interest in moonrise. One of our experts will follow up with you shortly",
+        status: "success",
+        duration: 4000,
+        position: "top",
+      })
+      // console.log('Form submitted successfully');
     } catch (error) {
       console.error('Error submitting form:', error);
+      setState((prev) => ({
+        ...prev,
+        isLoading: false,
+        error: error.message,
+      
+      }))
     }
     console.log(data);
 
@@ -63,6 +100,9 @@ const ReactHookForm = () => {
       <div className='contact-container m-4'>
         <img src="/contact.png" alt="contact"  />
       </div>
+      {error && (
+        <span className={`text-red-500`}>{error}</span>
+      )}
       <div className='flex justify-center w-1/2 p-3'>
         <p className='text-center custom-text'>Thank you for your interest in moonrise. To speak with a representative, please complete the form below. One of our experts will follow up with you shortly.</p>
       </div>
