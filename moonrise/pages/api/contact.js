@@ -5,6 +5,8 @@ const CONTACT_MESSAGE_FIELDS = {
   firstName: "First Name",
   lastName: "Last Name",
   email: "Email",
+  company: "Company",
+  jobTitle: "Job Title",
   phoneNumber: "Phone Number",
   country: "Country",
   enquieries: "Enquieries",
@@ -50,7 +52,7 @@ const handler = async (req, res) => {
       await transporter.sendMail({
         ...mailOptions,
         ...generateEmailContent(data),
-        subject: data.subject,
+        subject: 'New Moonrise Contact Message',
       
       })
       console.log('Email sent successfully')
