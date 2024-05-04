@@ -70,13 +70,14 @@ const ReactHookForm = () => {
       await sendContactForm(data); // Call the sendContactForm function with form data
       setTouched({})
       setState(initState)
+      console.log("Submitting form...");
       toast ({
         title: "Message sent",
         description: "Thank you for your interest in moonrise. One of our experts will follow up with you shortly",
         status: "success",
         duration: 4000,
         position: "top",
-      })
+      });
       // console.log('Form submitted successfully');
     } catch (error) {
       console.error('Error submitting form:', error);
@@ -106,7 +107,7 @@ const ReactHookForm = () => {
       <div className='flex justify-center w-1/2 p-3'>
         <p className='text-center custom-text'>Thank you for your interest in moonrise. To speak with a representative, please complete the form below. One of our experts will follow up with you shortly.</p>
       </div>
-      <form className='tutorial gap-2 w-3/5' onSubmit={handleSubmit(onSubmit)}>
+      <form className='tutorial gap-2 w-full sm:w-3/5' onSubmit={handleSubmit(onSubmit)}>
         <div className='flex gap-2'>  
           <div className='flex flex-col flex-1'>
             <label htmlFor='firstName' className='custom-text pb-2'>First Name</label>
