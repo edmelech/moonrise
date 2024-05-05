@@ -96,8 +96,16 @@ body {
     @apply mx-auto max-w-[1440px];
   }
 
+  @media screen and (min-width: 481px) and (max-width: 1366px) {
+    .padding-container {
+      padding-left: 40px; /* Adjust this value as needed */
+      padding-right: 40px; /* Adjust this value as needed */
+    }
+  }
+
   .padding-container {
-    @apply px-6 lg:px-4 ;
+    padding-left: 40px; /* Adjust this value as needed */
+    padding-right: 40px; /* Adjust this value as needed */
   }
 
   .flexCenter {

@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className="flexCenter mb-2 bg-gray-100 py-16">
       <div className='padding-container max-container flex w-full flex-col gap-14 '>
-        <div className="flex flex-col items-start justify-center gap-[10%] md:flex-row">
+        <div className="flex flex-col items-start justify-center gap-[5%] md:flex-row">
           <div className='max-w-md'>
             <Link href='/' className='mb-10'>
               <Image src="moonrise-logo.svg" alt="logo" width={200} height={29} />
@@ -24,7 +24,7 @@ const Footer = () => {
             </div>
             
           </div>
-       
+          
           <div className='flex flex-wrap gap-10 justify-end md:flex-1 text-lime-950'>
             {FOOTER_LINKS.map((columns) => (
                 <FooterColumn title={columns.title}>
@@ -38,7 +38,7 @@ const Footer = () => {
                 </FooterColumn>
               ))}
           </div>
-
+              
           <div className="flex flex-col gap-5 text-lime-950">
             <FooterColumn title={SOCIALS.title}>
               <ul className='regular-14 flex flex-col gap-4 text-lime-950'>
