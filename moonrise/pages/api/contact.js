@@ -9,7 +9,7 @@ const CONTACT_MESSAGE_FIELDS = {
   jobTitle: "Job Title",
   phoneNumber: "Phone Number",
   country: "Country",
-  enquieries: "Enquieries",
+  enquiries: "Enquiries",
 }
 
 const generateEmailContent = (data) => {
@@ -39,11 +39,11 @@ const handler = async (req, res) => {
       !data.email ||
       !data.firstName ||
       !data.lastName ||
-      !data.company || // not working
-      !data.jobTitle || // not working
+      // !data.company || 
+      // !data.jobTitle || 
       !data.phoneNumber ||
       !data.country ||
-      !data.enquieries
+      !data.enquiries
     ) {
       return res.status(400).json({ message: 'Bad request' })
     }

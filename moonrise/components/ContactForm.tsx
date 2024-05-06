@@ -19,7 +19,7 @@ import {
 import MoonriseLogo from './MoonriseLogo'
 import CountryList from './CountryList'
 
-const enquieries = [
+const enquiries = [
   "We are looking for hiring assistance",
   "I am looking for vacancies",
   "I want to work at moonrise",
@@ -40,7 +40,7 @@ const schema = z.object({
   jobTitle: z.string(),
   phoneNumber: z.string().regex(/^\d{7,}$/i, { message: "Phone number must contain at least 7 digits" }),
   country: z.string().min(1, "Please select a country"),
-  enquieries: z.string().min(1, "Please select an enquiry"),
+  enquiries: z.string().min(1, "Please select an enquiry"),
 });
 
 type FormFields = z.infer<typeof schema>;
@@ -187,7 +187,7 @@ const ReactHookForm = () => {
         </div>
         <div className='flex flex-col flex-1'>
           <label htmlFor='enquiry' className='custom-text pb-2'>How Can We Help You</label>
-          <select {...register("enquieries")}
+          <select {...register("enquiries")}
             id='enquiry'
             className='p-3 rounded-md flex-1 bg-transparent border border-green-950 text-slate-500'
             defaultValue=""
@@ -195,7 +195,7 @@ const ReactHookForm = () => {
             <option value="" disabled>
               Select one...
             </option>
-            {enquieries.map((enquiry, index) => (
+            {enquiries.map((enquiry, index) => (
               <option key={index} value={enquiry}>
                 {enquiry}
               </option>
@@ -209,7 +209,7 @@ const ReactHookForm = () => {
         {errors.phoneNumber && <div className='text-red-500'>{errors.phoneNumber.message}</div>}
          */}
         <div className='flex justify-center'>
-          <button disabled={Object.keys(errors).length > 0 || isSubmitting} type="submit" className="custom-button hover:bg-blue-700 text-white m-4 py-4 px-4 rounded w-40">
+          <button disabled={Object.keys(errors).length > 0 || isSubmitting} type="submit" className="custom-button hover:bg-green-500 text-white m-4 py-4 px-4 rounded w-40">
             {isSubmitting ? (
             <div className="flex justify-center items-center">
               <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-white"></div>
