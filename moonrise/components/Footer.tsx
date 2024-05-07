@@ -8,7 +8,7 @@ const Footer = () => {
     <footer className="flexCenter mb-2 bg-gray-100 py-16">
       <div className='padding-container max-container flex w-full flex-col gap-14 '>
         <div className="flex flex-col items-start justify-center gap-[5%] md:flex-row">
-          <div className='max-w-md'>
+          <div className='max-w-md pb-4'>
             <Link href='/' className='mb-10'>
               <Image src="moonrise-logo.svg" alt="logo" width={200} height={29} />
             </Link>
@@ -25,7 +25,7 @@ const Footer = () => {
             
           </div>
           
-          <div className='flex flex-wrap gap-10 justify-end md:flex-1 text-lime-950'>
+          <div className='flex flex-wrap gap-10 justify-end md:flex-1 text-lime-950 pb-8'>
             {FOOTER_LINKS.map((columns) => (
                 <FooterColumn title={columns.title}>
                   <ul className='regular-14 flex flex-col gap-4 text-lime-950'>
