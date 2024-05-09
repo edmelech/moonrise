@@ -11,9 +11,9 @@ export default function RootLayout({ children }) {
     <ChakraProvider>
       <div>
         <Navbar />
-        <main className='relative overflow-hidden'>
-        {children}
-        </main>
+            <main className='relative overflow-hidden'>
+            {children}
+            </main>
         <Footer />
       </div>
     </ChakraProvider>
