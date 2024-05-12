@@ -8,14 +8,14 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function RootLayout({ children }) {
   return (
-    <ChakraProvider>
-      <div>
-        <Navbar />
-            <main className='relative overflow-hidden'>
-            {children}
-            </main>
-        <Footer />
-      </div>
-    </ChakraProvider>
+        <ChakraProvider>
+          <div>
+            <Navbar />
+              <main className='relative overflow-hidden'>
+                {children}
+              </main>
+            <Footer />
+          </div>
+        </ChakraProvider>
   )
 }
