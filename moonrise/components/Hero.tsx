@@ -9,7 +9,7 @@ const Hero = () => {
     {/* LEFT */}
 
     <div className="bg-custom-color text-white p-8 md:p-16 min-h-screen md:w-3/5 md:min-w-3/5 ">
-      <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold pb-4 md:pb-8 lg:pb-12 xl:pb-16">The high-water mark in talent solutions</h1>
+      <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold pb-4 md:pb-8 lg:pb-12 xl:pb-16">The high-water mark in civil engineering recruitment</h1>
       <p className="text-sm md:text-base lg:text-lg xl:text-xl font-light">moonrise. is a specialist talent partner in the North American infrastructure industry. It is our sole mission to provide first class service to our clients, sourcing ideal candidates from niche markets and creating lasting business relationships. Boasting a deep and expanding network of industry leaders and experts across the US and Canada, we have the very best talent right at our fingertips. With an emphasis on civil infrastructure, we are recruitment specialists in: Engineering, Architecture, Real Estate, Construction, Automation & Controls, and Renewable Energy.</p> 
       <br />
       <p className="text-sm md:text-base lg:text-lg xl:text-xl font-light">We understand how important our clients' work is in creating a sustainable and functioning environment that works for everybody. Our clients trust us because we believe in what they do, whilst we spend all of our time developing our knowledge of the market in real time with genuine passion to ultimately deliver the very best talent solutions.</p>
