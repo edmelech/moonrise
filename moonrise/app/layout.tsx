@@ -3,19 +3,33 @@ import { ChakraProvider } from '@chakra-ui/react';
 import './globals.css'
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import dynamic from "next/dynamic";
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function RootLayout({ children }) {
+interface RootLayoutProps {
+  children: React.ReactNode
+}
+
+
+const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
   return (
-        <ChakraProvider>
+    // <ChakraProvider>
+      <html lang="en">
+        <body>
           <div>
             <Navbar />
               <main className='relative overflow-hidden'>
                 {children}
               </main>
             <Footer />
-          </div>
-        </ChakraProvider>
+          </div> 
+        </body>
+      </html>      
+    
+    // </ChakraProvider>
   )
 }
+
+
+export default dynamic (() => Promise.resolve(RootLayout), {ssr: false})
