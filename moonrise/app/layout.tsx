@@ -7,12 +7,12 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function RootLayout({ children }) {
   return (
-      <div>
-        <Navbar />
+    <div>
+      <Navbar />
         <main className='relative overflow-hidden'>
         {children}
         </main>
-        <Footer />
-      </div>
+      <Footer />
+    </div>
   )
 }
