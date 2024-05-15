@@ -18,7 +18,7 @@ const Hero = () => {
       <div className='hero-logo flex items-center justify-center w-1/2 md:w-1/4 mx-auto p-4 pt-2'>
         <MoonriseLogo className="w-full h-auto"/>
       </div>
-      <div className='text-sm md:text-base lg:text-lg xl:text-xl font-light text-center'>The high-water mark in recruitment.</div>
+      <div className='text-sm md:text-base lg:text-lg xl:text-xl font-light text-center'>The high-water mark in talent solutions.</div>
     </div>
     
     <div className="md:h-screen md:w-2/5 overflow-hidden">
