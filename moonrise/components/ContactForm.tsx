@@ -55,6 +55,7 @@ const ReactHookForm = () => {
   const { 
     register, 
     handleSubmit,
+    reset,
     formState: { errors, isSubmitting },
    } = useForm<FormFields>({
     resolver: zodResolver(schema),
@@ -70,14 +71,13 @@ const ReactHookForm = () => {
     await new Promise(resolve => setTimeout(resolve, 1000));
     try {
       await sendContactForm(data); // Call the sendContactForm function with form data
-      setTouched({})
-      setState(initState)
+      reset()
       console.log("Submitting form...");
       toast ({
         title: "Message sent",
         description: "Thank you for your interest in moonrise. One of our experts will follow up with you shortly",
         status: "success",
-        duration: 4000,
+        duration: 6000,
         position: "top",
       });
       // console.log('Form submitted successfully');

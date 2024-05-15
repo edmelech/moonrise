@@ -16,7 +16,13 @@ const Navbar = () => {
   return (
     <nav className="bg-white flex justify-between py-5 px-10 relative z-30 ">
       <Link href="/">
-        <Image src="/moonrise-logo.svg" alt="logo" width={200} height={100} />
+        <Image 
+          src="/moonrise-logo.svg" 
+          alt="logo" 
+          width="0"
+          height={0 as number | `${number}`}
+          className="w-52 h-auto"
+        />
       </Link>
       <ul className={`h-full gap-12 lg:flex ${isMenuOpen ? 'block' : 'hidden'}`}>
         {NAV_LINKS.map((link) => (
@@ -37,6 +43,7 @@ const Navbar = () => {
             height={32}
             className='inline-block cursor-pointer lg:hidden'
             onClick={toggleMenu}
+            style={{ width: "auto", height: "auto" }}
           />
 
     </nav>
