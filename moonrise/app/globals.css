@@ -63,6 +63,13 @@ select {
   cursor: not-allowed;
 }
 
+html, body {
+
+  padding: 0;
+  margin: 0;
+  
+  }
+
 /* below is from JS Mastery */
 
 * {
