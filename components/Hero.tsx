@@ -1,6 +1,7 @@
 import React from 'react'
 import Carousel from './Carousel';
 import MoonriseLogo from './MoonriseLogo';
+import Image from 'next/image';
 
 const Hero = () => {
   return (
@@ -14,15 +15,15 @@ const Hero = () => {
       <br />
       <p className="text-sm md:text-base lg:text-lg xl:text-xl font-light">We understand how important our clients' work is in creating a sustainable and functioning environment that works for everybody. Our clients trust us because we believe in what they do, whilst we spend all of our time developing our knowledge of the market in real time with genuine passion to ultimately deliver the very best talent solutions.</p>
       <br />
-      <p className='text-sm md:text-base lg:text-lg xl:text-xl font-light text-center pb-4 md:pb-0'>We are passionate. We are unique. We are experts. We are...</p>
-      <div className='hero-logo flex items-center justify-center w-1/2 md:w-1/4 mx-auto p-4 pt-2'>
+      <p className="text-sm md:text-base lg:text-lg xl:text-xl font-light text-center pb-4 md:pb-0">We are passionate. We are unique. We are experts. We are...</p>
+      <div className="hero-logo flex items-center justify-center w-1/2 md:w-1/4 mx-auto p-4 pt-2">
         <MoonriseLogo className="w-full h-auto"/>
       </div>
-      <div className='text-sm md:text-base lg:text-lg xl:text-xl font-light text-center'>The high-water mark in talent solutions.</div>
+      <div className="text-sm md:text-base lg:text-lg xl:text-xl font-light text-center">The high-water mark in talent solutions.</div>
     </div>
     
     <div className="md:h-screen md:w-2/5 overflow-hidden">
-      <img 
+      <Image 
         src="resize-location-mid.webp" 
         alt="Hero Image" 
         className="w-full h-full object-cover object-center min-w-full min-h-full" 
