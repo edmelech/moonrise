@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react'
+import Image from 'next/image';
 import { SubmitHandler, useForm } from 'react-hook-form'
 import z from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -101,7 +102,7 @@ const ReactHookForm = () => {
   return (
     <div className='flex flex-col justify-center items-center h-screen bg-white'>
       <div className='contact-container m-4'>
-        <img src="/contact.png" alt="contact"  />
+        <Image src="/contact.png" alt="contact"  />
       </div>
       {error && (
         <span className={`text-red-500`}>{error}</span>
