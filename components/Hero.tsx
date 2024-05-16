@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 const Hero = () => {
   return (
-    <section className='flex flex-col-reverse md:flex-row'>
+    <section className="flex flex-col-reverse md:flex-row">
 
     {/* LEFT */}
 
