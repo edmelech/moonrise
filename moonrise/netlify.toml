@@ -1,4 +1,5 @@
 [build]
+  base="moonrise"
   command = "npm run build"
-  publish = ".next"
+  publish = "moonrise/build"
 
