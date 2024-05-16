@@ -1,5 +1,5 @@
 [build]
-  base="moonrise"
+  base="."
   command = "npm run build"
-  publish = "moonrise/build"
+  publish = "/build"
 
