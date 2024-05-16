@@ -102,7 +102,7 @@ const ReactHookForm = () => {
   return (
     <div className='flex flex-col justify-center items-center h-screen bg-white'>
       <div className='contact-container m-4'>
-        <Image src="/contact.png" alt="contact"  />
+        <Image src="/contact.png" alt="contact" width={400} height={100}  />
       </div>
       {error && (
         <span className={`text-red-500`}>{error}</span>
