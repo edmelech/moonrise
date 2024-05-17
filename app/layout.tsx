@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Moonrise',
-  description: 'The high-water mark in talent solutions ',
+  description: 'The high-water mark in talent solutions',
 };
 
 const DynamicNavbar = dynamic(() => import('@/components/Navbar'), { ssr: false });
