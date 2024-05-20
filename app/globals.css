@@ -41,6 +41,7 @@ body {
   width: 15%;
   height: auto;
   filter: sepia(100%) hue-rotate(90deg) brightness(1.2);
+  min-width: 200px
 }
 
 
@@ -64,12 +65,39 @@ select {
 }
 
 html, body {
-
   padding: 0;
   margin: 0;
-  
+}
+
+
+.footer-link {
+  display: flex; /* Flex grow, shrink, and basis properties */
+  align-items: center; /* Ensures the items can shrink below their content size */
+  flex: none;
+}
+
+.footer-icon {
+  flex: none;
+  width: 24px;
+  height: 24px;
+}
+
+.footer-text {
+  flex: none;
+  font-size: 1rem; /* Use responsive units */
+  margin-left: 0.5rem; /* Adjust the margin to your preference */
+}
+
+@media (max-width: 768px) {
+  .footer-text {
+    font-size: 0.875rem; /* Adjust text size for smaller screens */
   }
 
+  .footer-icon {
+    width: 20px; /* Adjust icon size for smaller screens */
+    height: 20px;
+  }
+}
 /* below is from JS Mastery */
 
 * {

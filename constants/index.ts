@@ -28,10 +28,10 @@ export const FOOTER_LINKS = [
 export const SOCIALS = {
   title: 'Follow Us',
   links: [
-    { name: 'Facebook', icon: '/facebook.svg' },
     { name: 'Instagram', icon: '/instagram.svg' },
     { name: 'Youtube', icon: '/youtube.svg' },
     { name: 'LinkedIn', icon: '/linkedin.svg' },
-    { name: 'Twitter', icon: '/x.svg' },
+    { name: 'Twitter', icon: '/x.svg'},
+    { name: 'Spotify', icon: '/spotify.svg'}
   ],
 };

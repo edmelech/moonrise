@@ -46,9 +46,9 @@ const Footer = () => {
                   {SOCIALS.links.map((link) => (
                     <li key={link.name} className='flex items-center'>
                       <Link href='/'>
-                        <Image src={link.icon} alt={link.name} width={24} height={24} />
+                        <Image src={link.icon} alt={link.name} width={24} height={24} className='flex-none w-6 h-6 sm:w-8 sm:h-8'/>
                       </Link>
-                      <span className='ml-2'>{link.name}</span>
+                      <span className='ml-2 flex-none text-base'>{link.name}</span>
                     </li>
                   ))}
                 </ul>
