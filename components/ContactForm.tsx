@@ -100,7 +100,7 @@ const ReactHookForm = () => {
  
 
   return (
-    <div className='flex flex-col justify-center items-center h-screen bg-white'>
+    <div className='flex flex-col justify-center items-center min-h-screen bg-white'>
       <div className='contact-container m-4'>
         <Image src="/contact.png" alt="contact" width={400} height={100}  />
       </div>
@@ -111,7 +111,7 @@ const ReactHookForm = () => {
         <p className='text-center custom-text'>Thank you for your interest in moonrise. To speak with a representative, please complete the form below. One of our experts will follow up with you shortly.</p>
       </div>
       <form className='tutorial gap-2 w-full sm:w-3/5' onSubmit={handleSubmit(onSubmit)}>
-        <div className='flex gap-2'>  
+        <div className='flex flex-col sm:flex-row gap-2'>  
           <div className='flex flex-col flex-1'>
             <label htmlFor='firstName' className='custom-text pb-2'>First Name</label>
             <input {...register("firstName")} 
@@ -132,7 +132,7 @@ const ReactHookForm = () => {
           </div>
         </div>
 
-        <div className='flex gap-2'>
+        <div className='flex flex-col sm:flex-row gap-2'>
           <div className='flex flex-col flex-1'>
             <label htmlFor='company' className='custom-text pb-2'>Company</label>
             <input {...register("company")} 
@@ -151,7 +151,7 @@ const ReactHookForm = () => {
           </div>
         </div>
         
-        <div className='flex gap-2 '>
+        <div className='flex flex-col sm:flex-row gap-2 '>
           <div className='flex flex-col flex-1 '>
             <label htmlFor='email' className='custom-text pb-2'>Email</label>
             <input {...register("email")} 
