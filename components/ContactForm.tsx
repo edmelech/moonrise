@@ -18,9 +18,11 @@ import {
   Text,
   Textarea,
   useToast,
+  Select,
 } from "@chakra-ui/react";
 import MoonriseLogo from './MoonriseLogo'
 import CountryList from './CountryList'
+import { m } from 'framer-motion';
 
 const enquiries = [
   "We are looking for hiring assistance",
@@ -44,6 +46,7 @@ const schema = z.object({
   phoneNumber: z.string().regex(/^\d{7,}$/i, { message: "Phone number must contain at least 7 digits" }),
   country: z.string().min(1, "Please select a country"),
   enquiries: z.string().min(1, "Please select an enquiry"),
+  message: z.string().min(1, "Please enter a message"),
 });
 
 type FormFields = z.infer<typeof schema>;
@@ -114,7 +117,7 @@ const ReactHookForm = () => {
         <div className='flex flex-col sm:flex-row gap-2'>  
           <div className='flex flex-col flex-1'>
             <label htmlFor='firstName' className='custom-text pb-2'>First Name</label>
-            <input {...register("firstName")} 
+            <Input {...register("firstName")} 
               type="text" 
               id="firstName"
               className={`p-3 rounded-md flex-1 bg-transparent border border-green-950 custom-text ${errors.firstName ? 'error-border' : ''}`}
@@ -123,7 +126,7 @@ const ReactHookForm = () => {
           </div>
           <div className='flex flex-col flex-1'>
             <label htmlFor='lastName' className='custom-text pb-2'>Last Name</label>
-            <input {...register("lastName")} 
+            <Input {...register("lastName")} 
               type="text" 
               id='lastName'
               className={`p-3 rounded-md flex-1 bg-transparent border border-green-950 custom-text ${errors.lastName ? 'error-border' : ''}`}
@@ -135,7 +138,7 @@ const ReactHookForm = () => {
         <div className='flex flex-col sm:flex-row gap-2'>
           <div className='flex flex-col flex-1'>
             <label htmlFor='company' className='custom-text pb-2'>Company</label>
-            <input {...register("company")} 
+            <Input {...register("company")} 
               type="text" 
               id='company'
               className='p-3 rounded-md flex-1 bg-transparent border border-green-950 custom-text'
@@ -143,7 +146,7 @@ const ReactHookForm = () => {
           </div>
           <div className='flex flex-col flex-1'>
             <label htmlFor='jobTitle' className='custom-text pb-2'>Job Title</label>
-            <input {...register("jobTitle")} 
+            <Input {...register("jobTitle")} 
               type="text" 
               id='jobTitle'
               className='p-3 rounded-md flex-1 bg-transparent border border-green-950 custom-text'
@@ -154,7 +157,7 @@ const ReactHookForm = () => {
         <div className='flex flex-col sm:flex-row gap-2 '>
           <div className='flex flex-col flex-1 '>
             <label htmlFor='email' className='custom-text pb-2'>Email</label>
-            <input {...register("email")} 
+            <Input {...register("email")} 
               type="text" 
               id='email'
               className={`p-3 rounded-md flex-1 bg-transparent border border-green-950 custom-text ${errors.firstName ? 'error-border' : ''}`}
@@ -163,7 +166,7 @@ const ReactHookForm = () => {
           </div>
           <div className='flex flex-col flex-1 '>
             <label htmlFor='phone' className='custom-text pb-2'>Phone number</label>
-            <input {...register("phoneNumber")} 
+            <Input {...register("phoneNumber")} 
               type="text" 
               id='phone'
               className={`p-3 rounded-md flex-1 bg-transparent border border-green-950 custom-text ${errors.phoneNumber ? 'error-border' : ''}`}  
@@ -171,7 +174,7 @@ const ReactHookForm = () => {
             {errors.phoneNumber && <span className='text-red-500'>{errors.phoneNumber.message}</span>}
           </div>
         </div>
-        <div className='flex flex-col flex-1'>
+        {/* <div className='flex flex-col flex-1'>
           <label htmlFor='country' className='custom-text pb-2'>Country</label>
           <select {...register("country")}
             id='country'
@@ -187,8 +190,28 @@ const ReactHookForm = () => {
               </option>
             ))}
           </select>
-        </div>
-        <div className='flex flex-col flex-1'>
+        </div> */}
+
+        <FormControl borderColor={errors.country ? 'red.500' : 'green.950'}>
+          <label htmlFor='country' className='custom-text pb-2'>Country</label>
+          <Select
+            {...register("country")}
+            id='country'
+            className='p-3 rounded-md flex-1 bg-transparent text-slate-500' // Remove border styling here
+            defaultValue=""
+          >
+            <option value="" disabled>
+              Select a country
+            </option>
+            {countries.map((country, index) => (
+              <option key={index} value={country}>
+                {country}
+              </option>
+            ))}
+          </Select>
+        </FormControl>
+
+        {/* <div className='flex flex-col flex-1'>
           <label htmlFor='enquiry' className='custom-text pb-2'>How Can We Help You</label>
           <select {...register("enquiries")}
             id='enquiry'
@@ -204,6 +227,35 @@ const ReactHookForm = () => {
               </option>
             ))}
           </select>
+        </div> */}
+
+        <FormControl borderColor={errors.enquiries ? 'red.500' : 'green.950'}>
+          <label htmlFor='enquiry' className='custom-text pb-2' style={{ marginBottom: '1rem' }}>How Can We Help You</label>
+          <Select
+            {...register("enquiries")}
+            id='enquiry'
+            className='p-3 rounded-md flex-1 bg-transparent text-slate-500' // Remove border styling here
+            defaultValue=""
+          >
+            <option value="" disabled>
+              Select one...
+            </option>
+            {enquiries.map((enquiry, index) => (
+              <option key={index} value={enquiry}>
+                {enquiry}
+              </option>
+            ))}
+          </Select>
+        </FormControl>
+
+        <div className='flex flex-col flex-1'>
+          <label htmlFor='message' className='custom-text pb-2'>Message</label>
+          <Textarea {...register("message")} 
+            id='message'
+            className={`p-3 rounded-md flex-1 bg-transparent border border-green-950 custom-text ${errors.message ? 'error-border' : ''}`}
+         
+          />
+          {errors.message && <span className='text-red-500'>{errors.message.message}</span>}
         </div>
     
         {/* {errors.lastName && <div className='text-red-500'>{errors.lastName.message}</div>}
