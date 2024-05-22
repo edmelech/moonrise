@@ -82,6 +82,16 @@ html, body {
   height: 24px;
 }
 
+.footer-icons {
+  display: flex;
+}
+
+@media (max-width: 640px) {
+  .footer-icons {
+    display: none;
+  }
+}
+
 .footer-text {
   flex: none;
   font-size: 1rem; /* Use responsive units */
