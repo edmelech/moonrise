@@ -1,5 +1,7 @@
+import { z } from "zod";
 import { text } from "stream/consumers";
 import { mailOptions, transporter } from "../../config/nodemailer"
+import schema from '@/lib/formSchema';
 
 const CONTACT_MESSAGE_FIELDS = {
   name: "Name",
@@ -34,16 +36,12 @@ const handler = async (req, res) => {
   // console.log(req.body)
   if (req.method === 'POST') {
     const data = req.body
-    if (
-      !data.email ||
-      !data.name ||
-      // !data.company || 
-      // !data.jobTitle || 
-      !data.phoneNumber ||
-      !data.country ||
-      !data.msg
-    ) {
-      return res.status(400).json({ message: 'Bad request' })
+
+    // Validate the data against the schema
+    const validation = schema.safeParse(data);
+
+    if (!validation.success) {
+      return res.status(400).json({ message: 'Bad request', errors: validation.error.errors });
     }
 
     try {
