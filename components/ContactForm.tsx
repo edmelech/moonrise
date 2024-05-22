@@ -99,13 +99,15 @@ const ReactHookForm = () => {
       <form className='tutorial gap-2 w-full sm:w-3/5' onSubmit={handleSubmit(onSubmit)}>
         <div className='flex flex-col sm:flex-row gap-2'>  
           <div className='flex flex-col flex-1'>
-            <label htmlFor='name' className='custom-text pb-2'>Full Name</label>
-            <Input {...register("name")} 
-              type="text" 
-              id="name"
-              className={`p-3 rounded-md flex-1 bg-transparent border border-green-950 custom-text ${errors.name ? 'error-border' : ''}`}
-            />
-            {errors.name && <span className='text-red-500'>{errors.name.message}</span>}
+            <FormControl isInvalid={!!errors.name}>
+              <label htmlFor='name' className='custom-text pb-2'>Full Name</label>
+              <Input {...register("name")} 
+                type="text" 
+                id="name"
+                className={`p-3 rounded-md flex-1 bg-transparent border border-green-950 custom-text ${errors.name ? 'error-border' : ''}`}
+              />
+              {errors.name && <span className='text-red-500'>{errors.name.message}</span>}
+            </FormControl>
           </div>
         </div>
 
