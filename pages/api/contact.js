@@ -2,14 +2,13 @@ import { text } from "stream/consumers";
 import { mailOptions, transporter } from "../../config/nodemailer"
 
 const CONTACT_MESSAGE_FIELDS = {
-  firstName: "First Name",
-  lastName: "Last Name",
+  name: "Name",
   email: "Email",
   company: "Company",
   jobTitle: "Job Title",
   phoneNumber: "Phone Number",
   country: "Country",
-  enquiries: "Enquiries",
+  msg: "Enquiries",
 }
 
 const generateEmailContent = (data) => {
@@ -37,13 +36,12 @@ const handler = async (req, res) => {
     const data = req.body
     if (
       !data.email ||
-      !data.firstName ||
-      !data.lastName ||
+      !data.name ||
       // !data.company || 
       // !data.jobTitle || 
       !data.phoneNumber ||
       !data.country ||
-      !data.enquiries
+      !data.msg
     ) {
       return res.status(400).json({ message: 'Bad request' })
     }

@@ -24,18 +24,6 @@ import MoonriseLogo from './MoonriseLogo'
 // import CountryList from './CountryList'
 import { m } from 'framer-motion';
 
-const enquiries = [
-  "We are looking for hiring assistance",
-  "I am looking for vacancies",
-  "I want to work at moonrise",
-  "I have a different enquiry"
-]
-
-const countries = [
-  "Canada",
-  "UK",
-  "USA",
-]
 
 const schema = z.object({
   email: z.string().email(),
@@ -44,7 +32,7 @@ const schema = z.object({
   jobTitle: z.string(),
   phoneNumber: z.string().regex(/^\d{7,}$/i, { message: "Phone number must contain at least 7 digits" }),
   country: z.string().min(1, "Please select a country"),
-  message: z.string().min(1, "Please enter a message"),
+  msg: z.string().min(1, "Please enter a message"),
 });
 
 type FormFields = z.infer<typeof schema>;
@@ -74,6 +62,9 @@ const ReactHookForm = () => {
       ...prev,
       isLoading: true,
     }));
+
+    console.log('form data:', data);
+
     try {
       await sendContactForm(data); // Call the sendContactForm function with form data
       reset()
@@ -98,10 +89,8 @@ const ReactHookForm = () => {
         position: "top",
       });
     }
-    console.log(data);
 
-  
-    
+    console.log(data) 
   }
 
  
@@ -169,42 +158,6 @@ const ReactHookForm = () => {
             {errors.phoneNumber && <span className='text-red-500'>{errors.phoneNumber.message}</span>}
           </div>
         </div>
-        {/* <div className='flex flex-col flex-1'>
-          <label htmlFor='country' className='custom-text pb-2'>Country</label>
-          <select {...register("country")}
-            id='country'
-            className='p-3 rounded-md flex-1 bg-transparent border border-green-950 text-slate-500'
-            defaultValue=""
-          >
-            <option value="" disabled>
-              Select a country
-            </option>
-            {countries.map((country, index) => (
-              <option key={index} value={country}>
-                {country}
-              </option>
-            ))}
-          </select>
-        </div> */}
-
-        {/* <FormControl borderColor={errors.country ? 'red.500' : 'green.950'}>
-          <label htmlFor='country' className='custom-text pb-2'>Country</label>
-          <Select
-            {...register("country")}
-            id='country'
-            className='p-3 rounded-md flex-1 bg-transparent text-slate-500' // Remove border styling here
-            defaultValue=""
-          >
-            <option value="" disabled>
-              Select a country
-            </option>
-            {countries.map((country, index) => (
-              <option key={index} value={country}>
-                {country}
-              </option>
-            ))}
-          </Select>
-        </FormControl> */}
 
         <div className='flex flex-col sm:flex-row gap-2'>  
           <div className='flex flex-col flex-1'>
@@ -217,41 +170,17 @@ const ReactHookForm = () => {
           </div>
         </div>
 
-        {/* <div className='flex flex-col flex-1'>
-          <label htmlFor='enquiry' className='custom-text pb-2'>How Can We Help You</label>
-          <select {...register("enquiries")}
-            id='enquiry'
-            className='p-3 rounded-md flex-1 bg-transparent border border-green-950 text-slate-500'
-            defaultValue=""
-          >
-            <option value="" disabled>
-              Select one...
-            </option>
-            {enquiries.map((enquiry, index) => (
-              <option key={index} value={enquiry}>
-                {enquiry}
-              </option>
-            ))}
-          </select>
-        </div> */}
-
-
-
         <div className='flex flex-col flex-1'>
-          <label htmlFor='message' className='custom-text pb-2'>How can we help you?</label>
-          <Textarea {...register("message")} 
-            id='message'
-            className={`p-3 rounded-md flex-1 bg-transparent border border-green-950 custom-text ${errors.message ? 'error-border' : ''}`}
+          <label htmlFor='msg' className='custom-text pb-2'>How can we help you?</label>
+          <Textarea {...register("msg")} 
+            id='msg'
+            className={`p-3 rounded-md flex-1 bg-transparent border border-green-950 custom-text ${errors.msg ? 'error-border' : ''}`}
          
           />
-          {errors.message && <span className='text-red-500'>{errors.message.message}</span>}
+          {errors.msg && <span className='text-red-500'>{errors.msg.message}</span>}
         </div>
     
-        {/* {errors.lastName && <div className='text-red-500'>{errors.lastName.message}</div>}
-        {errors.email && <div className='text-red-500'>{errors.email.message}</div>}
-        {errors.firstName && <div className='text-red-500'>{errors.firstName.message}</div>}
-        {errors.phoneNumber && <div className='text-red-500'>{errors.phoneNumber.message}</div>}
-         */}
+
         <div className='flex justify-center'>
           <button disabled={Object.keys(errors).length > 0 || isSubmitting} type="submit" className="custom-button hover:bg-green-500 text-white m-4 py-4 px-4 rounded w-40">
             {isSubmitting ? (
@@ -264,13 +193,8 @@ const ReactHookForm = () => {
           )}
           </button>
         </div>
-        
-       
       </form>
-      
-
     </div>
-    
   );
 }
 
