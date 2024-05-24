@@ -24,7 +24,7 @@ const Navbar = () => {
           className="w-52 h-auto"
         />
       </Link>
-      <ul className={`h-full gap-12 lg:flex ${isMenuOpen ? 'block' : 'hidden'}`}>
+      <ul className={`lg:flex gap-12 ${isMenuOpen ? 'fixed top-0 left-0 w-full h-full bg-white flex flex-col justify-center items-center z-40' : 'hidden'}`}>
         {NAV_LINKS.map((link) => (
           <Link 
             href={link.href} 
