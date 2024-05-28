@@ -1,4 +1,5 @@
 import { Inter } from 'next/font/google'
+import { Lora } from 'next/font/google'
 import './globals.css'
 import Footer from '@/components/Footer';
 import dynamic from 'next/dynamic';
@@ -6,6 +7,11 @@ import { Metadata } from 'next';
 import { Providers } from './providers';
 
 const inter = Inter({ subsets: ['latin'] })
+const lora = Lora({ 
+  subsets: ['latin'],
+  weight: "400",
+  variable: "--font-lora"
+})
 
 export const metadata: Metadata = {
   title: 'Moonrise',
@@ -17,7 +23,7 @@ const DynamicNavbar = dynamic(() => import('@/components/Navbar'), { ssr: false 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning={true}>
-      <body className={inter.className}>
+      <body className={`${inter.className} ${lora.variable}`}>
       <Providers>
         <DynamicNavbar />
           <main className="relative overflow-hidden">

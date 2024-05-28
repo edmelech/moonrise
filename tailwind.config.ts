@@ -7,6 +7,11 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+        serif: ['Lora', 'serif'],
+        lora: ["var(--font-lora)"],
+      },
       colors: {
         green: {
           50: '#30AF5B',
