@@ -48,7 +48,7 @@ const Navbar = () => {
     open: {
       transition: {
         delayChildren: 0.3,
-        staggerChildren: 0.9,
+        staggerChildren: 0.1,
         staggerDirection: 1,
       },
     },
@@ -66,7 +66,7 @@ const Navbar = () => {
             className="w-52 h-auto"
           />
         </Link>
-        <ul className={`lg:flex gap-12 ${isMenuOpen ? 'fixed top-0 left-0 w-full h-full bg-white flex flex-col justify-center items-center z-40' : 'hidden'}`}>
+        {/* <ul className={`lg:flex gap-12 ${isMenuOpen ? 'fixed top-0 left-0 w-full h-full bg-white flex flex-col justify-center items-center z-40' : 'hidden'}`}>
           {NAV_LINKS.map((link) => (
             <Link 
               href={link.href} 
@@ -76,7 +76,7 @@ const Navbar = () => {
               {link.label}
             </Link>
           ))}
-        </ul>
+        </ul> */}
         <Image 
           src="/menu.svg"
           alt="menu"
@@ -96,12 +96,12 @@ const Navbar = () => {
             initial="initial"
             animate="animate"
             exit="initial"
-            className="fixed left-0 top-0 w-full h-screen bg-green-900 origin-top text-white p-10 z-50"
+            className="fixed left-0 top-0 w-full h-screen bg-custom-color origin-top text-white p-10 z-50"
           >
             <div className="flex h-full flex-col">
               <div className="flex justify-between">
                 <h1 className="text-lg text-white">Moonrise</h1>
-                <p className="cursor-pointer text-md text-black" onClick={toggleMenu}>Close</p>
+                <p className="cursor-pointer text-md text-white" onClick={toggleMenu}>Close</p>
               </div>
               <motion.div 
                 variants={containerVars} 
@@ -151,7 +151,7 @@ const MobilesNavLink = ({ title, href }) => {
   return (
     <motion.div 
       variants={mobileLinkVars} 
-      className="text-4xl uppercase text-black">
+      className="text-4xl uppercase text-white">
       <Link href={href}>
         {title}
       </Link>
