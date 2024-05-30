@@ -108,7 +108,7 @@ const Navbar = () => {
                 initial="initial"
                 animate="open"
                 exit="inital"
-                className="flex flex-col h-full justify-center font-lora items-center gap-4"
+                className="flex flex-col h-full justify-center font-custom items-center gap-4"
               >
                 {NAV_LINKS.map((link, index) => {
                   return (

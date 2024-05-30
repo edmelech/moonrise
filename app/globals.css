@@ -108,6 +108,15 @@ html, body {
     height: 20px;
   }
 }
+
+@font-face {
+  font-family: 'CustomFont';
+  src: url('/fonts/NewakeFont.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 /* below is from JS Mastery */
 
 * {

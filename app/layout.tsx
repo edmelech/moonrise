@@ -1,4 +1,5 @@
 import { Inter } from 'next/font/google'
+
 // import { Lora } from 'next/font/google'
 import './globals.css'
 import Footer from '@/components/Footer';
