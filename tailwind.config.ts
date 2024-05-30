@@ -1,3 +1,5 @@
+import { custom } from "zod";
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -11,6 +13,7 @@ module.exports = {
         sans: ['Inter', 'sans-serif'],
         serif: ['Lora', 'serif'],
         lora: ["var(--font-lora)"],
+        custom: ['var(--font-newake)', 'sans-serif'],
       },
       colors: {
         green: {
