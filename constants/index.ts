@@ -18,7 +18,7 @@ export const FOOTER_LINKS = [
   },
   {
     title: 'Careers',
-    links: ['Join Us', 'Job Search',],
+    links: ['Join Us', 'Job Search'],
   },
 
 
@@ -28,10 +28,9 @@ export const FOOTER_LINKS = [
 export const SOCIALS = {
   title: 'Follow Us',
   links: [
-    { name: 'Instagram', icon: '/instagram.svg' },
-    { name: 'Youtube', icon: '/youtube.svg' },
-    { name: 'LinkedIn', icon: '/linkedin.svg' },
-    { name: 'Twitter', icon: '/x.svg'},
-    { name: 'Spotify', icon: '/spotify.svg'}
+    { name: 'Youtube', icon: '/youtube.svg', url: 'https://www.youtube.com/channel/UC-uVWflMqVaxzVzTuG9skcg' },
+    { name: 'LinkedIn', icon: '/linkedin.svg', url: 'https://www.linkedin.com/company/100443241' },
+    { name: 'Twitter', icon: '/x.svg', url: 'https://x.com/moonrisegroup'},
+    { name: 'Spotify', icon: '/spotify.svg', url: 'https://open.spotify.com/playlist/54Yq3Zbxl2hixgJQJ3El8Y?si=8885da07bfac44e9'}
   ],
 };
