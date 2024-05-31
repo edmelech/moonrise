@@ -56,7 +56,7 @@ const Navbar = () => {
 
     return (
       <>
-      <nav className="bg-white flex justify-between py-5 px-10 relative z-30 ">
+      <nav className="bg-white flex justify-between items-center py-5 px-10 relative z-30 ">
         <Link href="/">
           <Image 
             src="/moonrise-logo.svg" 
@@ -66,17 +66,15 @@ const Navbar = () => {
             className="w-52 h-auto"
           />
         </Link>
-        {/* <ul className={`lg:flex gap-12 ${isMenuOpen ? 'fixed top-0 left-0 w-full h-full bg-white flex flex-col justify-center items-center z-40' : 'hidden'}`}>
+
+        <div className="hidden lg:flex space-x-4">
           {NAV_LINKS.map((link) => (
-            <Link 
-              href={link.href} 
-              key={link.key} 
-              className="regular-16 text-lime-950 flexCenter cursor-pointer pb-1.5 transition-all hover:font-bold"
-            >
+            <Link key={link.key} href={link.href} className="text-black">
               {link.label}
             </Link>
           ))}
-        </ul> */}
+        </div>
+
         <Image 
           src="/menu.svg"
           alt="menu"
@@ -95,7 +93,7 @@ const Navbar = () => {
             variants={menuVars}
             initial="initial"
             animate="animate"
-            exit="initial"
+            exit="exit"
             className="fixed left-0 top-0 w-full h-screen bg-custom-color origin-top text-white p-10 z-50"
           >
             <div className="flex h-full flex-col">
@@ -107,12 +105,12 @@ const Navbar = () => {
                 variants={containerVars} 
                 initial="initial"
                 animate="open"
-                exit="inital"
-                className="flex flex-col h-full justify-center var(--font-newake) items-center gap-4"
+                exit="exit"
+                className="flex flex-col h-full justify-center  items-center gap-4"
               >
                 {NAV_LINKS.map((link, index) => {
                   return (
-                    <div className='overflow-hidden var(--font-newake)' key={index}>
+                    <div className='overflow-hidden' key={index}>
                       <MobilesNavLink
                         title={link.label}
                         href={link.href}
@@ -151,7 +149,7 @@ const MobilesNavLink = ({ title, href }) => {
   return (
     <motion.div 
       variants={mobileLinkVars} 
-      className="text-4xl uppercase text-white">
+      className="text-4xl var(--font-newake) text-white ">
       <Link href={href}>
         {title}
       </Link>
