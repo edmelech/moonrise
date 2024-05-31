@@ -69,7 +69,7 @@ const Navbar = () => {
 
         <div className="hidden lg:flex space-x-4">
           {NAV_LINKS.map((link) => (
-            <Link key={link.key} href={link.href} className="text-black">
+            <Link key={link.key} href={link.href} className="text-black hover:font-bold">
               {link.label}
             </Link>
           ))}
