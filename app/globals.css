@@ -121,7 +121,15 @@ html, body {
   font-style: normal;
 }
 
+.form-mobile-padding {
+  padding: 20px; /* Adjust the padding value as needed */
+}
 
+@media (max-width: 768px) {
+  .form-mobile-padding {
+    padding: 30px; /* More padding for smaller screens */
+  }
+}
 
 /* below is from JS Mastery */
 

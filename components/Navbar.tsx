@@ -114,6 +114,7 @@ const Navbar = () => {
                       <MobilesNavLink
                         title={link.label}
                         href={link.href}
+                        toggleMenu={toggleMenu}
                       />
                     </div>
                   )
@@ -145,12 +146,12 @@ const mobileLinkVars = {
   },
 }
 
-const MobilesNavLink = ({ title, href }) => {
+const MobilesNavLink = ({ title, href, toggleMenu }) => {
   return (
     <motion.div 
       variants={mobileLinkVars} 
       className="text-4xl var(--font-newake) text-white ">
-      <Link href={href}>
+      <Link href={href} onClick={toggleMenu}>
         {title}
       </Link>
     </motion.div>

@@ -26,6 +26,7 @@ import MoonriseLogo from './MoonriseLogo'
 import { m } from 'framer-motion';
 
 
+
 type FormFields = z.infer<typeof schema>;
 
 const initValues = { name: "", email: "", subject: "", message: "" };
@@ -96,7 +97,7 @@ const ReactHookForm = () => {
       <div className='flex justify-center w-1/2 p-3'>
         <p className='text-center custom-text'>Thank you for your interest in moonrise. To speak with a representative, please complete the form below. One of our experts will follow up with you shortly.</p>
       </div>
-      <form className='tutorial gap-2 w-full sm:w-3/5' onSubmit={handleSubmit(onSubmit)}>
+      <form className='tutorial gap-2 w-full sm:w-3/5 form-mobile-padding' onSubmit={handleSubmit(onSubmit)}>
         <div className='flex flex-col sm:flex-row gap-2'>  
           <div className='flex flex-col flex-1'>
             <FormControl isInvalid={!!errors.name}>
