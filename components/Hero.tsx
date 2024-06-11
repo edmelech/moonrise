@@ -26,7 +26,7 @@ const Hero = () => {
     <div className="md:w-2/5 md:order-2 overflow-hidden">
       <div className="relative w-full h-full">
         <Image 
-          src="/resize-location-mid.webp" 
+          src="/balloons.jpg" 
           alt="Hero Image" 
           width={1500}
           height={1500}
