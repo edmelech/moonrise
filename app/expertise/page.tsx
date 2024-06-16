@@ -1,14 +1,13 @@
-
 import React from 'react'
 import RootLayout from '@/app/layout'
-import ContactForm from '@/components/ContactForm'
+import ExpertiseContent from '@/components/ExpertiseContent'
 
-const contact: React.FC = () => {
+const expertise: React.FC = () => {
   return (
       <div className='border-t border-gray-500 pb-2 min-h-screen flex flex-col'>
-        <ContactForm />
+        <ExpertiseContent />
       </div>
   )
 }
 
-export default contact
+export default expertise

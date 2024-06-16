@@ -1,5 +1,5 @@
 export const NAV_LINKS = [
-  { href: '/', key: 'expertise', label: 'Expertise' },
+  { href: '/expertise', key: 'expertise', label: 'Expertise' },
   // { href: '/locations', key: 'locations', label: 'Locations' },
   // { href: '/vacancies', key: 'vacancies', label: 'Vacancies ' },
   { href: '/contact', key: 'contact', label: 'Contact' },
