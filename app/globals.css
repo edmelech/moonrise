@@ -29,7 +29,7 @@ body {
   }
 }
 
-
+/* expertese section below  */
 
 .learn-more {
   background-color: #0BA6A2;
@@ -44,6 +44,24 @@ body {
   background-color: darkgreen; /* Darker green on hover */
 }
 
+.half-width-section {
+  width: 100%; /* Default width for smaller screens */
+}
+
+@media (min-width: 768px) { /* Adjust this breakpoint as necessary */
+  .half-width-section-right {
+    width: 50%; /* Half the screen width for larger screens */
+    margin-left: auto; /* Align to the right */
+  }
+}
+
+@media (min-width: 768px) { /* Adjust this breakpoint as necessary */
+  .half-width-section-left {
+    width: 50%; /* Half the screen width for larger screens */
+  }
+}
+
+/* end of expertese section */
 
 .custom-button {
   background-color: #0BA6A2;
@@ -141,6 +159,8 @@ html, body {
     padding: 30px; /* More padding for smaller screens */
   }
 }
+
+
 
 /* below is from JS Mastery */
 
