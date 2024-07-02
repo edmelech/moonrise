@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const ExpertiseContent: React.FC = () => {
   return (
     <div className="expertise-content m-8">

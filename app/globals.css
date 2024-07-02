@@ -31,7 +31,18 @@ body {
 
 
 
+.learn-more {
+  background-color: #0BA6A2;
+  color: white; /* White text */
+  padding: 10px 20px; /* Padding for the button */
+  border: none; /* Remove default border */
+  border-radius: 25px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+}
 
+.learn-more:hover {
+  background-color: darkgreen; /* Darker green on hover */
+}
 
 
 .custom-button {
