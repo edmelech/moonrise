@@ -13,6 +13,15 @@ const ExpertiseContent: React.FC = () => {
             <button className="learn-more">LEARN MORE</button>
           </div>
         </li>
+
+        {/* Image section */}
+         <li className="mb-6">
+          <div className="image-section">
+            <div className="triangle-image"></div>
+          </div>
+        </li>
+
+
         <li className="mb-6">
           <div className="half-width-section-right">
             <h3 className="mb-2 font-bold">Wastewater</h3>

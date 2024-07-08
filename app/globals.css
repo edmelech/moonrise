@@ -61,6 +61,30 @@ body {
   }
 }
 
+.expertise-content {
+  position: relative;
+}
+
+.image-section {
+  position: relative;
+  height: 200px; /* Adjust height as needed */
+}
+
+.triangle-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 100px solid transparent; /* Adjust size as needed */
+  border-right: 100px solid transparent; /* Adjust size as needed */
+  border-bottom: 200px solid transparent; /* Adjust color and size as needed */
+  transform: rotate(-90deg); /* Rotate to position the isosceles triangle correctly */
+  background-image: url('/Water-Engineer-Clipboard.jpg'); /* Add your image path here */
+  background-size: cover; /* Ensure the image covers the entire triangle */
+  background-position: center; /* Center the image within the triangle */
+}
+
 /* end of expertese section */
 
 .custom-button {
