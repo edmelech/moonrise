@@ -61,31 +61,45 @@ body {
   }
 }
 
+/* triamgle image css below */
+
+@media (min-width: 768px) { /* Adjust this breakpoint as necessary */
+  .half-width-section-left {
+    width: 50%; /* Half the screen width for larger screens */
+  }
+}
+
 .expertise-content {
   position: relative;
 }
 
-.image-section {
-  position: relative;
-  height: 200px; /* Adjust height as needed */
+.image-section img.small-image {
+  width: 50%; /* 1/5 of the original width */
+  height: auto; /* Maintain aspect ratio */
 }
 
 .triangle-image {
+  width: 75%; /* Adjust as needed */
+  height: auto; /* Maintain aspect ratio */
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
   position: absolute;
-  top: 0;
   left: 0;
-  width: 0;
-  height: 0;
-  border-left: 100px solid transparent; /* Adjust size as needed */
-  border-right: 100px solid transparent; /* Adjust size as needed */
-  border-bottom: 200px solid transparent; /* Adjust color and size as needed */
-  transform: rotate(-90deg); /* Rotate to position the isosceles triangle correctly */
-  background-image: url('/Water-Engineer-Clipboard.jpg'); /* Add your image path here */
-  background-size: cover; /* Ensure the image covers the entire triangle */
-  background-position: center; /* Center the image within the triangle */
+  top: 50px;
+  z-index: 1;
 }
 
-/* end of expertese section */
+.engineering-paragraph,
+.engineering-button {
+  position: relative;
+  z-index: 2; /* Ensure the text and button are above the triangle */
+  margin-bottom: 100px; /* Adjust as needed to create space below the text */
+}
+
+.architecture-paragraph {
+  position: relative;
+  z-index: 2; /* Ensure the text is above the triangle */
+  margin-top: 100px; /* Adjust as needed to create space above the text */
+}
 
 .custom-button {
   background-color: #0BA6A2;

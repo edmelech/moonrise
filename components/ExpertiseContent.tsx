@@ -9,20 +9,20 @@ const ExpertiseContent: React.FC = () => {
         <li className="mb-6">
           <div className="half-width-section-right">
             <h3 className="mb-2 font-bold">Engineering</h3>
-            <p className="mb-4">At moonrise., we recognise that the engineering sector is growing at an astonishing rate. Our specialist
+            <p className="engineering-paragraph mb-4">At moonrise., we recognise that the engineering sector is growing at an astonishing rate. Our specialist
 consultants are experts in the engineering field and are committed to meeting the ever-growing demand
 that our global infrastructure presents. Our team of specialists have plenty of hands-on experience in
 placing passionate engineers from entry to executive level across multiple disciplines. These include Land
 Development, Water/Wastewater, Water Resources, Transportation, Construction, Geotechnical,
 Electrical, Structural, Oil &amp; Gas, Automation &amp; Controls and many more.</p>
-            <button className="learn-more">LEARN MORE</button>
+            <button className="learn-more engineering-button">LEARN MORE</button>
           </div>
         </li>
 
         {/* Image section */}
          <li className="mb-6">
           <div className="image-section">
-            <div className="triangle-image"></div>
+            <img src="/Water-Engineer-Clipboard.jpg" alt="Water Engineer Clipboard" className="triangle-image" />
           </div>
         </li>
 
