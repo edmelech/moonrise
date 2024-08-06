@@ -5,35 +5,32 @@ const ExpertiseContent: React.FC = () => {
   return (
     <div className="expertise-content m-8">
       <h2 className="text-xl font-bold mb-6">Expertise</h2>
-      <ul className="list-none">
-        <li className="mb-6">
-          <div className="half-width-section-right">
+      <div className="content-wrapper flex">
+        <div className="image-wrapper flex justify-center items-center">
+          <img src="/Water-Engineer-Clipboard.jpg" alt="Water Engineer Clipboard" className="rectangle-image" />
+        </div>
+
+        <div className="text-content">
+          <div className="half-width-section-right mb-6">
             <h3 className="mb-2 font-bold">Engineering</h3>
-            <p className="engineering-paragraph mb-4">At moonrise., we recognise that the engineering sector is growing at an astonishing rate. Our specialist
-consultants are experts in the engineering field and are committed to meeting the ever-growing demand
-that our global infrastructure presents. Our team of specialists have plenty of hands-on experience in
-placing passionate engineers from entry to executive level across multiple disciplines. These include Land
-Development, Water/Wastewater, Water Resources, Transportation, Construction, Geotechnical,
-Electrical, Structural, Oil &amp; Gas, Automation &amp; Controls and many more.</p>
+            <p className="engineering-paragraph mb-4">At moonrise, we recognise that the engineering sector is growing at an astonishing rate. Our specialist
+              consultants are experts in the engineering field and are committed to meeting the ever-growing demand
+              that our global infrastructure presents. Our team of specialists have plenty of hands-on experience in
+              placing passionate engineers from entry to executive level across multiple disciplines. These include Land
+              Development, Water/Wastewater, Water Resources, Transportation, Construction, Geotechnical,
+              Electrical, Structural, Oil &amp; Gas, Automation &amp; Controls and many more.</p>
             <button className="learn-more engineering-button">LEARN MORE</button>
           </div>
-        </li>
 
-        {/* Image section */}
-         <li className="mb-6">
-          <div className="image-section">
-            <img src="/Water-Engineer-Clipboard.jpg" alt="Water Engineer Clipboard" className="triangle-image" />
-          </div>
-        </li>
-
-
-        <li className="mb-6">
-          <div className="half-width-section-right">
+          <div className="half-width-section-right mb-6">
             <h3 className="mb-2 font-bold">Architecture</h3>
             <p className="mb-4">Our specialist recruiters have hands-on experience in finding and providing talent across the architecture industry. We understand that the built environment is constantly evolving, presenting new challenges in sustainability practices, design protocols, and construction standards. And we understand that you need the creative experience and strategic input of architects, planners and designers to achieve them. Using a client-focused and data-driven approach, we make it simple for you to deliver and access the complex talent and recruitment landscape so that you can successfully meet your business objectives.</p>
             <button className="learn-more">LEARN MORE</button>
           </div>
-        </li>
+        </div>
+      </div> 
+      <div className="text-content">
+      <ul className="list-none">
         <li className="mb-6">
           <div className="half-width-section-left">
             <h3 className="mb-2 font-bold">Real Estate</h3>
@@ -48,6 +45,7 @@ Electrical, Structural, Oil &amp; Gas, Automation &amp; Controls and many more.<
             <button className="learn-more">LEARN MORE</button>
           </div>
         </li>
+        <div className="lower-half-width-section-right">
         <li className="mb-6">
           <div className="half-width-section-right">
             <h3 className="mb-2 font-bold">Renewable Energy</h3>
@@ -63,7 +61,10 @@ Electrical, Structural, Oil &amp; Gas, Automation &amp; Controls and many more.<
             <button className="learn-more">LEARN MORE</button>
           </div>
         </li>
+        </div>
+        
       </ul>
+      </div>
     </div>
   );
 };

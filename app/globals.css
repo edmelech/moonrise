@@ -44,16 +44,13 @@ body {
   background-color: darkgreen; /* Darker green on hover */
 }
 
-.half-width-section {
-  width: 100%; /* Default width for smaller screens */
-}
 
-@media (min-width: 768px) { /* Adjust this breakpoint as necessary */
-  .half-width-section-right {
+/* @media (min-width: 768px) { /* Adjust this breakpoint as necessary */
+  .lower-half-width-section-right {
     width: 50%; /* Half the screen width for larger screens */
     margin-left: auto; /* Align to the right */
   }
-}
+
 
 @media (min-width: 768px) { /* Adjust this breakpoint as necessary */
   .half-width-section-left {
@@ -70,35 +67,35 @@ body {
 }
 
 .expertise-content {
-  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
-.image-section img.small-image {
-  width: 50%; /* 1/5 of the original width */
-  height: auto; /* Maintain aspect ratio */
+.content-wrapper {
+  display: flex;
+  align-items: wrap;
 }
 
-.triangle-image {
-  width: 75%; /* Adjust as needed */
-  height: auto; /* Maintain aspect ratio */
-  clip-path: polygon(0 0, 100% 50%, 0 100%);
-  position: absolute;
-  left: 0;
-  top: 50px;
-  z-index: 1;
+.image-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.engineering-paragraph,
-.engineering-button {
-  position: relative;
-  z-index: 2; /* Ensure the text and button are above the triangle */
-  margin-bottom: 100px; /* Adjust as needed to create space below the text */
+.rectangle-image {
+  max-width: 100%;
+  height: auto;
 }
 
-.architecture-paragraph {
-  position: relative;
-  z-index: 2; /* Ensure the text is above the triangle */
-  margin-top: 100px; /* Adjust as needed to create space above the text */
+.text-content {
+  flex: 1;
+  padding: 16px;
+}
+
+.half-width-section-right,
+.half-width-section-left {
+  margin-bottom: 20px;
 }
 
 .custom-button {
