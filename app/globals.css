@@ -95,6 +95,7 @@ body {
 .rectangle-image {
   max-width: 50%;
   height: auto;
+  padding: 20px
 }
 
 .text-content {
@@ -102,7 +103,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  
+  padding: 20px
 }
 
 .half-width-section-right {

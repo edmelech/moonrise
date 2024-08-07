@@ -4,7 +4,7 @@ import React from 'react';
 const ExpertiseContent: React.FC = () => {
   return (
     <div className="expertise-content m-8">
-      <h2 className="text-xl font-bold mb-6">Expertise</h2>
+      <h2 className="text-xl font-bold mb-6 ml-5">Expertise</h2>
       <div className="content-wrapper flex mb-6">
         <div className="image-wrapper">
           <img src="/Water-Engineer-Clipboard.jpg" alt="Water Engineer Clipboard" className="rectangle-image" />
@@ -47,8 +47,8 @@ const ExpertiseContent: React.FC = () => {
             <img src="/water-treatment-plant.jpg" alt="Water Treatment Plant" className="rectangle-image" />
           </div>
       </div>
-      <div className="content-wrapper flex">
-        <div className="half-width-section-right mb-6">
+      <div className="text-content">
+        <div className="half-width-section-left mb-6">
           <h3 className="mb-2 font-bold">Aviation / Aerospace</h3>
           <p className="mb-4">We provide the expertise and ideas you need to confidently solve your aviation and aerospace talent management challenges. When it comes to the research, design, manufacture and maintenance of both aircraft and spacecraft, moonrise. has the people, strategy, and resources to provide the talent you require. We work with all kinds of organisations in the aviation and aerospace industry to facilitate growth and exploration. Our extensive networks and close regional knowledge allow us to access talent from around the globe.</p>
           <button className="learn-more">LEARN MORE</button>
