@@ -54,17 +54,13 @@ body {
 
 @media (min-width: 768px) { /* Adjust this breakpoint as necessary */
   .half-width-section-left {
-    width: 50%; /* Half the screen width for larger screens */
+    width: 100%; /* Half the screen width for larger screens */
   }
 }
 
 /* triamgle image css below */
 
-@media (min-width: 768px) { /* Adjust this breakpoint as necessary */
-  .half-width-section-left {
-    width: 50%; /* Half the screen width for larger screens */
-  }
-}
+
 
 .expertise-content {
   display: flex;
@@ -80,6 +76,7 @@ body {
 .text-and-image-wrapper {
   display: flex;
   flex: 1;
+  width: 100%;
 }
 
 .image-wrapper {
@@ -105,15 +102,23 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 20px; /* Adjust padding as needed */
+  
 }
 
 .half-width-section-right {
-  margin-bottom: 20px;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .half-width-section-left {
   flex: 1;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.mb-6 {
+  margin-bottom: 20px; /* Adjust margin as needed */
 }
 
 .custom-button {

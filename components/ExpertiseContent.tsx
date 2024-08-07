@@ -30,27 +30,22 @@ const ExpertiseContent: React.FC = () => {
         </div>
       </div> 
       <div className="content-wrapper flex">
-        <div className="text-and-image-wrapper flex">
-          <ul className="list-none">
-            <li className="mb-6">
+          <div className="text-content">
               <div className="half-width-section-left">
                 <h3 className="mb-2 font-bold">Real Estate</h3>
                 <p className="mb-4">At moonrise. Our expert consultants specialise in strategically targeting top-tier candidates and partnering with clients across a broad portfolio of roles at real estate companies, from innovative start-ups to major multinationals from the commercial, residential and property investment, development and asset management sectors. We are passionate about people and property, with a team that understands the demands of real estate and go the extra mile to secure successful placements.</p>
                 <button className="learn-more">LEARN MORE</button>
               </div>
-            </li>
-            <li className="mb-6">
+
               <div className="half-width-section-left">
                 <h3 className="mb-2 font-bold">Renewable Energy</h3>
                 <p className="mb-4">Our energy network consists of thousands of professionals with multi-disciplined capabilities as well as ample resources to serve global clients effectively and efficiently. Our resources and geographical base enable us to serve key local areas and partner efficiently with industry leaders in the energy field. Some of the disciplines covered by our network include Power Delivery Services, Battery Energy Storage Systems (BESS) Consulting, Hydrogen Services, Wind Engineering Services, Solar Engineering Services, Natural Gas Engineering Services, and Zero-Emission Vehicle Infrastructure.</p>
                 <button className="learn-more">LEARN MORE</button>
               </div>
-            </li>
-          </ul>
+          </div>
           <div className="image-wrapper">
             <img src="/water-treatment-plant.jpg" alt="Water Treatment Plant" className="rectangle-image" />
           </div>
-        </div>
       </div>
       <div className="content-wrapper flex">
         <div className="half-width-section-right mb-6">
@@ -59,7 +54,6 @@ const ExpertiseContent: React.FC = () => {
           <button className="learn-more">LEARN MORE</button>
         </div>
       </div>
-      
     </div>
   );
 };
