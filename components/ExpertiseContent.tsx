@@ -4,7 +4,7 @@ import React from 'react';
 const ExpertiseContent: React.FC = () => {
   return (
     <div className="expertise-content m-8">
-      <h2 className="text-xl font-bold mb-6 ml-5">Expertise</h2>
+      <h2 className="text-2xl font-bold mb-6 ml-5">Expertise</h2>
       <div className="content-wrapper flex flex-col md:flex-row mb-6">
         <div className="image-wrapper md:w-1/2 order-1 md:order-none">
           <img src="/Water-Engineer-Clipboard.jpg" alt="Water Engineer Clipboard" className="rectangle-image w-full" />
