@@ -63,6 +63,18 @@ const ExpertiseContent: React.FC = () => {
             <button className="learn-more">LEARN MORE</button>
           </Link>
         </div>
+        <div className="half-width-section-left mb-6">
+          <h3 className="mb-2 font-bold">Technology</h3>
+          <p className="mb-4">We understand how quickly technology is impacting the world, transforming industries, improving
+communities, and helping us realise a better and more sustainable environment. moonrise. partners with
+some of the leading global organisations in the Technology industry, enabling them to scale into new
+markets and territories, create and design new products and offerings, and restructure their teams from
+entry-level to leadership executives. Areas of expertise include Cyber Security, Semi-Conductors, Artificial
+Intelligence, Cloud-Based Tech, Digital Infrastructure, Sustainability Tech, and more.</p>
+          <Link href="/contact">
+            <button className="learn-more">LEARN MORE</button>
+          </Link>
+        </div>
       </div>
     </div>
   );
