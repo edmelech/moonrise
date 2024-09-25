@@ -7,7 +7,7 @@ const ExpertiseContent: React.FC = () => {
       <h2 className="text-2xl font-bold mb-6 ml-5">Expertise</h2>
       <div className="content-wrapper flex flex-col md:flex-row mb-6">
         <div className="image-wrapper md:w-1/2 order-1 md:order-none">
-          <img src="/Water-Engineer-Clipboard-low-res.jpg" alt="Water Engineer Clipboard" className="rectangle-image w-full" />
+          <img src="/Female-Engineer.jpg" alt="Water Engineer Clipboard" className="rectangle-image w-full" />
         </div>
 
         <div className="text-content md:w-1/2 order-2 md:order-none">
@@ -52,30 +52,36 @@ const ExpertiseContent: React.FC = () => {
             </div>
           </div>
           <div className="image-wrapper md:w-1/2 order-1 md:order-none">
-            <img src="/water-treatment-plant-low-res.jpg" alt="Water Treatment Plant" className="rectangle-image w-full" />
+            <img src="/Neighbourhood.jpg" alt="Water Treatment Plant" className="rectangle-image w-full" />
           </div>
       </div>
-      <div className="text-content">
-        <div className="half-width-section-left mb-6">
-          <h3 className="mb-2 font-bold">Aviation / Aerospace</h3>
-          <p className="mb-4">We provide the expertise and ideas you need to confidently solve your aviation and aerospace talent management challenges. When it comes to the research, design, manufacture and maintenance of both aircraft and spacecraft, moonrise. has the people, strategy, and resources to provide the talent you require. We work with all kinds of organisations in the aviation and aerospace industry to facilitate growth and exploration. Our extensive networks and close regional knowledge allow us to access talent from around the globe.</p>
-          <Link href="/contact">
-            <button className="learn-more">LEARN MORE</button>
-          </Link>
+
+      <div className="content-wrapper flex flex-col md:flex-row mb-6">
+        <div className="image-wrapper md:w-1/2 order-1 md:order-none">
+          <img src="/Aerospace.png" alt="Water Engineer Clipboard" className="rectangle-image w-full" />
         </div>
-        <div className="half-width-section-left mb-6">
-          <h3 className="mb-2 font-bold">Technology</h3>
-          <p className="mb-4">We understand how quickly technology is impacting the world, transforming industries, improving
-            communities, and helping us realise a better and more sustainable environment. moonrise. partners with
-            some of the leading global organisations in the Technology industry, enabling them to scale into new
-            markets and territories, create and design new products and offerings, and restructure their teams from
-            entry-level to leadership executives. Areas of expertise include Cyber Security, Semi-Conductors, Artificial
-            Intelligence, Cloud-Based Tech, Digital Infrastructure, Sustainability Tech, and more.</p>
-          <Link href="/contact">
-            <button className="learn-more">LEARN MORE</button>
-          </Link>
+        <div className="text-content">
+          <div className="half-width-section-left mb-6">
+            <h3 className="mb-2 font-bold">Aviation / Aerospace</h3>
+            <p className="mb-4">We provide the expertise and ideas you need to confidently solve your aviation and aerospace talent management challenges. When it comes to the research, design, manufacture and maintenance of both aircraft and spacecraft, moonrise. has the people, strategy, and resources to provide the talent you require. We work with all kinds of organisations in the aviation and aerospace industry to facilitate growth and exploration. Our extensive networks and close regional knowledge allow us to access talent from around the globe.</p>
+            <Link href="/contact">
+              <button className="learn-more">LEARN MORE</button>
+            </Link>
+          </div>
+          <div className="half-width-section-left mb-6">
+            <h3 className="mb-2 font-bold">Technology</h3>
+            <p className="mb-4">We understand how quickly technology is impacting the world, transforming industries, improving
+              communities, and helping us realise a better and more sustainable environment. moonrise. partners with
+              some of the leading global organisations in the Technology industry, enabling them to scale into new
+              markets and territories, create and design new products and offerings, and restructure their teams from
+              entry-level to leadership executives. Areas of expertise include Cyber Security, Semi-Conductors, Artificial
+              Intelligence, Cloud-Based Tech, Digital Infrastructure, Sustainability Tech, and more.</p>
+            <Link href="/contact">
+              <button className="learn-more">LEARN MORE</button>
+            </Link>
+          </div>
+        </div>  
         </div>
-      </div>
     </div>
   );
 };
