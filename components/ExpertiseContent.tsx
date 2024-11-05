@@ -7,7 +7,7 @@ const ExpertiseContent: React.FC = () => {
       <h2 className="text-2xl font-bold mb-6 ml-5">Expertise</h2>
       <div className="content-wrapper flex flex-col md:flex-row mb-6">
         <div className="image-wrapper md:w-1/2 order-1 md:order-none">
-          <img src="/Female-Engineer.jpg" alt="Water Engineer Clipboard" className="rectangle-image w-full" />
+          <img src="/Female-Engineer-compressed.jpg" alt="Water Engineer Clipboard" className="rectangle-image w-full" />
         </div>
 
         <div className="text-content md:w-1/2 order-2 md:order-none">
@@ -52,7 +52,7 @@ const ExpertiseContent: React.FC = () => {
             </div>
           </div>
           <div className="image-wrapper md:w-1/2 order-1 md:order-none">
-            <img src="/Neighbourhood.jpg" alt="Water Treatment Plant" className="rectangle-image w-full" />
+            <img src="/Neighbourhood-compressed.jpg" alt="Water Treatment Plant" className="rectangle-image w-full" />
           </div>
       </div>
 

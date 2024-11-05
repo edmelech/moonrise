@@ -4,9 +4,9 @@ import localFont from 'next/font/local'
 // import { Lora } from 'next/font/google'
 import './globals.css'
 import Footer from '@/components/Footer';
-import dynamic from 'next/dynamic';
 import { Metadata } from 'next';
 import { Providers } from './providers';
+import NavbarWrapper from '@/components/NavbarWrapper'; // Import the new Client Component
 
 const myFont = localFont({
   src: '../public/fonts/NewakeFont.otf',
@@ -26,8 +26,6 @@ export const metadata: Metadata = {
   description: 'The high-water mark in talent solutions',
 };
 
-const DynamicNavbar = dynamic(() => import('@/components/Navbar'), { ssr: false });
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning={true}>
@@ -40,7 +38,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className={`${inter.className} ${myFont.variable } `}>
       <Providers>
-        <DynamicNavbar />
+        <NavbarWrapper />
           <main className="relative overflow-hidden">
             {children}
           </main>
